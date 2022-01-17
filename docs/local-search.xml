@@ -4,6 +4,69 @@
   
   
   <entry>
+    <title>Redis笔记-05</title>
+    <link href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-05/"/>
+    <url>/2022/01/18/Redis%E7%AC%94%E8%AE%B0-05/</url>
+    
+    <content type="html"><![CDATA[<h2 id="redis中的布隆过滤器bloomfilter"><a class="markdownIt-Anchor" href="#redis中的布隆过滤器bloomfilter"></a> Redis中的布隆过滤器（BloomFilter）</h2><p><code>Redis</code>官方在<code>4.0</code>版本中提供了插件功能，此时可以将<code>rebloom</code>作为插件加载到Redis Server中，一边给Redis提供布隆去重功能。</p><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs docker">docker pull redislab/rebloom<br>docker <span class="hljs-keyword">run</span><span class="bash"> -p 6739:6739 redislab/rebloom</span><br>redis-cli<br></code></pre></td></tr></table></figure><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs vala"><span class="hljs-meta"># 插入</span><br>bf.add key value<br><span class="hljs-meta"># 多个插入</span><br>bt.madd key value1 value2 value3 ...<br><span class="hljs-meta"># 查询单个key是否存在</span><br>bf.exists key value<br><span class="hljs-meta"># 查询多个key是否存在</span><br>bf.mexists key value1 value2 ...<br><br><span class="hljs-meta"># 自定义参数过滤器</span><br>bf.reserve key error_rate initial_size<br><br><span class="hljs-meta"># error_rate 容错率 默认值为0.01 越低需要的存储空间越大 </span><br><span class="hljs-meta"># initial_size 预计放入元素数量 默认值为100 当放入的实际元素数量超过该数量，会出现误判，超过数量越大，误判越严重 </span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>Redis</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>.Net6笔记-01</title>
+    <link href="/2022/01/18/Net6%E7%AC%94%E8%AE%B0-01/"/>
+    <url>/2022/01/18/Net6%E7%AC%94%E8%AE%B0-01/</url>
+    
+    <content type="html"><![CDATA[<h2 id="enumerablechunk"><a class="markdownIt-Anchor" href="#enumerablechunk"></a> Enumerable.Chunk</h2><p>记一下<code>.Net 6</code>中的<code>Enumerable</code>类新增了一个<code>Chunk</code>方法，用来生成数据块，该方法相较与之前实现同样功能的代码量少了许多<br />例如，我们的需求是10001个整型数字然后每一千的数字装入一个数组，形成数据块。新增的<code>Chunk</code>方法只需要一行代码就可以实现，而之前的需要8行代码才能实现。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">// .Net 6</span><br>List&lt;<span class="hljs-built_in">int</span>[]&gt; source = Enumerable.Range(<span class="hljs-number">1</span>, <span class="hljs-number">10001</span>).Chunk(<span class="hljs-number">1000</span>).ToList();<br><br><span class="hljs-comment">// 之前版本</span><br><br>List&lt;<span class="hljs-built_in">int</span>&gt; list = Enumerable.Range(<span class="hljs-number">1</span>, <span class="hljs-number">10001</span>).ToList();<br>List&lt;<span class="hljs-built_in">int</span>[]&gt; chunks = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>[]&gt;();<br><span class="hljs-built_in">int</span> totalCount = list.Count;<br><span class="hljs-built_in">int</span> pageSize = <span class="hljs-number">1000</span>;<br><span class="hljs-built_in">int</span> pageCount = Convert.ToInt32(Math.Ceiling(totalCount / (<span class="hljs-built_in">double</span>) pageSize));<br><span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt;= pageCount; i++)<br>&#123;<br>    chunks.Add(list.Skip(i * pageSize).Take(pageSize).ToArray());<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>C#</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Redis笔记-04</title>
+    <link href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-04/"/>
+    <url>/2022/01/18/Redis%E7%AC%94%E8%AE%B0-04/</url>
+    
+    <content type="html"><![CDATA[<h2 id="使用redis中的geohash数据结构实现附近的酒店类似功能"><a class="markdownIt-Anchor" href="#使用redis中的geohash数据结构实现附近的酒店类似功能"></a> 使用Redis中的GeoHash数据结构实现附近的酒店类似功能</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>Redis</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SQLServer索引01</title>
     <link href="/2021/12/08/SQLServer%E7%B4%A2%E5%BC%9501/"/>
     <url>/2021/12/08/SQLServer%E7%B4%A2%E5%BC%9501/</url>
