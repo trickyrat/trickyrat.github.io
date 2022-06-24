@@ -16,20 +16,20 @@
   <meta name="description" content="">
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
-  <meta name="description" content="指针（Pointer） 指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类  指针的指针（Pointer to pointer） 1i">
+  <meta name="description" content="题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。 请你找出并返回只出现一次的那个数。 你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。  示例 示例  1:  输入: nums &#x3D; [1,1,2,3,3,4,4,8,8] 输出: 2  示例 2:  输入: nums &#x3D;  [3,3,7,7,10,11,11] 输出: 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言教程-03 指针">
-<meta property="og:url" content="https://trickyrat.github.io/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-03/index.html">
+<meta property="og:title" content="Leetcode-540">
+<meta property="og:url" content="https://trickyrat.github.io/2022/02/14/Leetcode-540/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="指针（Pointer） 指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类  指针的指针（Pointer to pointer） 1i">
+<meta property="og:description" content="题目描述 给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。 请你找出并返回只出现一次的那个数。 你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。  示例 示例  1:  输入: nums &#x3D; [1,1,2,3,3,4,4,8,8] 输出: 2  示例 2:  输入: nums &#x3D;  [3,3,7,7,10,11,11] 输出: 1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-08T05:27:37.000Z">
-<meta property="article:modified_time" content="2022-01-17T16:46:13.079Z">
+<meta property="article:published_time" content="2022-02-14T12:52:33.000Z">
+<meta property="article:modified_time" content="2022-02-14T12:59:33.334Z">
 <meta property="article:author" content="trickyrat">
-<meta property="article:tag" content="编程语言">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>C语言教程-03 指针 - Meow</title>
+  <title>Leetcode-540 - Meow</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="C语言教程-03 指针">
+            <span class="h2" id="subtitle" title="Leetcode-540">
               
             </span>
 
@@ -202,8 +202,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-08 13:27" pubdate>
-        2020年10月8日 下午
+      <time datetime="2022-02-14 20:52" pubdate>
+        2022年2月14日 晚上
       </time>
     </span>
   
@@ -213,7 +213,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      275 字
+      283 字
     </span>
   
 
@@ -259,27 +259,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">C语言教程-03 指针</h1>
+            <h1 style="display: none">Leetcode-540</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 个月前
+                  本文最后更新于：4 个月前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="指针pointer"><a class="markdownIt-Anchor" href="#指针pointer"></a> 指针（Pointer）</h1>
-<p>指针可谓是 C 语言的灵魂也是难点，</p>
-<p>指针也是一个内置类型</p>
-<p>从右向左，可以清晰分辨指针</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">int</span> *ptr;  <span class="hljs-comment">// 声明一个指向int类型的指针变量ptr</span><br><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// 声明一个int类型的变量i并赋值0</span><br>ptr = &amp;i;  <span class="hljs-comment">// 将i的内存地址（非物理内存地址）赋值给ptr</span><br></code></pre></td></tr></table></figure>
-<h2 id="指针分类"><a class="markdownIt-Anchor" href="#指针分类"></a> 指针分类</h2>
-<h3 id="指针的指针pointer-to-pointer"><a class="markdownIt-Anchor" href="#指针的指针pointer-to-pointer"></a> 指针的指针（Pointer to pointer）</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">int</span> **pp; <span class="hljs-comment">// 声明一个指向int*类型的指针变量pp</span><br></code></pre></td></tr></table></figure>
-<h3 id="函数指针function-pointer"><a class="markdownIt-Anchor" href="#函数指针function-pointer"></a> 函数指针（Function Pointer）</h3>
+              <h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
+<p>给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。</p>
+<p>请你找出并返回只出现一次的那个数。</p>
+<p>你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。</p>
+<h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
+<p>示例  1:</p>
 <blockquote>
-<p>return_type (*pointer_name)(param_type1, param_type2,…);</p>
+<p>输入: nums = [1,1,2,3,3,4,4,8,8]<br />
+输出: 2</p>
 </blockquote>
+<p>示例 2:</p>
+<blockquote>
+<p>输入: nums =  [3,3,7,7,10,11,11]<br />
+输出: 10</p>
+</blockquote>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<p>因为只出现一次的元素下标x的左边有偶数个元素，然后下标从0开始，所以下标x一定是偶数，可以在偶数下标范围内二分搜索。搜索的目标是找到满足nums[x] != nums[x + 1]的最小偶数下标x，则下标x的元素是只出现一次的元素。</p>
 
             </div>
             <hr>
@@ -289,9 +294,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/C%E8%AF%AD%E8%A8%80/">C语言</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
                     
                   </div>
                 
@@ -299,7 +304,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -316,18 +321,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-04/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C语言教程-04 函数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/09/30/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-02/">
-                        <span class="hidden-mobile">C语言教程-02 变量</span>
+                      <a href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-05/">
+                        <span class="hidden-mobile">Redis笔记-05</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

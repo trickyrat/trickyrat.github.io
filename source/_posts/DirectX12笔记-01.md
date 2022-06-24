@@ -42,7 +42,7 @@ $$
 
 则称$\tau$为 v 的线性变换。其中$u = (u_x, u_y, u_z)$和$v = (v_x, v_y, v_z)$是任意的 3D 向量，k 为标量。
 
-线性变换主要靠矩阵来实现，如`ObjectToWorldMatrix`便是将对象从对象空间转换到世界空间。DirectX12 中矩阵`XMMATRIX`使用齐次坐标，即 4x4。[为什么不使用 3x3 的矩阵呢？](https://trickyrat.gitee.io/2020/04/06/WhyNotApply3X3MatrixAsTransformMatrix/)
+线性变换主要靠矩阵来实现，如`ObjectToWorldMatrix`便是将对象从对象空间转换到世界空间。DirectX12 中矩阵`XMMATRIX`使用齐次坐标，即 4x4。[为什么不使用 3x3 的矩阵呢？](https://trickyrat.github.io/2020/04/06/DirectX12笔记-03//)
 
 ## 参考文献
 
