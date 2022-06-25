@@ -13,10 +13,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Meow">
 <meta property="og:url" content="https://trickyrat.github.io/page/3/index.html">
 <meta property="og:site_name" content="Meow">
@@ -24,15 +24,20 @@
 <meta property="article:author" content="trickyrat">
 <meta name="twitter:card" content="summary_large_image">
   
+  
+  
   <title>Meow</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -41,21 +46,42 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Meow</strong>
@@ -149,6 +175,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -161,34 +188,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/bg/Leetcode-01/20191116.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Meow...meow...meow...">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/Leetcode-01/20191116.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="Meow...meow...meow..."></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -207,48 +240,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/09/19/Redis%E7%AC%94%E8%AE%B0-01/" target="_self">
-          
-          
-            
-          
-           Redis 命令
- 创建和获取 key
-
-
-
-命令
-说明
-例子
-
-
-
-
-set
-创建一个名为 key 值为 value 键值对
-set views 10
-
-
-get
-获取名为 key 的值，存在返回值，不存在返回 nil
-get views
-
-
-mset
-一次创建多个键值对
-mset key1 1 key2 2
-
-
-mget
-一次获取多个键的值
-mget key1 key2
-
-
-
-1234567
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/19/Redis%E7%AC%94%E8%AE%B0-01/" target="_self">
+        <div>
+          Redis 命令  创建和获取 key    命令 说明 例子     set 创建一个名为 key 值为 value 键值对 set views 10   get 获取名为 key 的值，存在返回值，不存在返回 nil get views   mset 一次创建多个键值对 mset key1 1 key2 2   mget 一次获取多个键的值 mget key1 key2    1234567
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -260,20 +257,39 @@ mget key1 key2
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/Redis/">Redis</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/Redis/" class="category-chain-item">Redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>
             
           </div>
         
@@ -292,19 +308,12 @@ mget key1 key2
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/08/11/Leetcode-468/" target="_self">
-          
-          
-            
-          
-           验证 IP 地址（Valid IP Address）
- 题目描述
-编写一个函数来验证输入的字符串是否是有效的 IPv4 或  IPv6 地址。
-IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制数，其范围为  0 - 255，  用(&quot;.&quot;)分割。比如，172.16.254.1；
-同时，IPv4 地址内的数不会以 0 开头。比如，地址  172.16.254.0
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/11/Leetcode-468/" target="_self">
+        <div>
+          验证 IP 地址（Valid IP Address）  题目描述 编写一个函数来验证输入的字符串是否是有效的 IPv4 或  IPv6 地址。 IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制数，其范围为  0 - 255，  用(&quot;.&quot;)分割。比如，172.16.254.1； 同时，IPv4 地址内的数不会以 0 开头。比如，地址  172.16.254.0
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -316,20 +325,39 @@ IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制�
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
           </div>
         
@@ -348,23 +376,12 @@ IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制�
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/04/09/Leetcode-25/" target="_self">
-          
-          
-            
-          
-           题目描述
-给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。
-k  是一个正整数，它的值小于或等于链表的长度。
-如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。
- 示例
-
-给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5
-当  k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5
-当  k = 3 时，应当返回:
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/04/09/Leetcode-25/" target="_self">
+        <div>
+          题目描述 给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。 k  是一个正整数，它的值小于或等于链表的长度。 如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。  示例  给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5 当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5 当  k &#x3D; 3 时，应当返回:
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -376,20 +393,39 @@ k  是一个正整数，它的值小于或等于链表的长度。
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
           </div>
         
@@ -408,31 +444,12 @@ k  是一个正整数，它的值小于或等于链表的长度。
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/04/09/Leetcode-242/" target="_self">
-          
-          
-            
-          
-           题目描述
-给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
- 示例
-示例  1:
-
-输入: s = “anagram”, t = “nagaram”
-输出: true
-
-示例 2:
-
-输入: s = “rat”, t = “car”
-输出: false
-
- 说明
-异位词是指两个字符串所含相同字母的个数相同，你可以假设字符串只包含小写字母。
- 思路
-这道题其实就是在
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/04/09/Leetcode-242/" target="_self">
+        <div>
+          题目描述 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。  示例 示例  1:  输入: s &#x3D; “anagram”, t &#x3D; “nagaram” 输出: true  示例 2:  输入: s &#x3D; “rat”, t &#x3D; “car” 输出: false   说明 异位词是指两个字符串所含相同字母的个数相同，你可以假设字符串只包含小写字母。  思路 这道题其实就是在
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -444,20 +461,39 @@ k  是一个正整数，它的值小于或等于链表的长度。
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
           </div>
         
@@ -476,37 +512,12 @@ k  是一个正整数，它的值小于或等于链表的长度。
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/04/09/Leetcode-20/" target="_self">
-          
-          
-            
-          
-           题目描述
-给定一个只包括 ‘(’，’)’，’{’，’}’，’[’，’]’  的字符串，判断字符串是否有效。
-有效字符串需满足：
-
-左括号必须用相同类型的右括号闭合。
-左括号必须以正确的顺序闭合。
-
-注意空字符串可被认为是有效字符串。
- 示例
-示例 1：
-
-输入: “()”
-输出: true
-
-示例 2：
-
-输入: “()[]{}”
-输出: true
-
-示例 3：
-
-输入: “(]”
-输出: fa
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/04/09/Leetcode-20/" target="_self">
+        <div>
+          题目描述 给定一个只包括 ‘(’，’)’，’{’，’}’，’[’，’]’  的字符串，判断字符串是否有效。 有效字符串需满足：  左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  注意空字符串可被认为是有效字符串。  示例 示例 1：  输入: “()” 输出: true  示例 2：  输入: “()[]{}” 输出: true  示例 3：  输入: “(]” 输出: fa
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -518,20 +529,39 @@ k  是一个正整数，它的值小于或等于链表的长度。
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
             
           </div>
         
@@ -550,21 +580,12 @@ k  是一个正整数，它的值小于或等于链表的长度。
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/04/06/DirectX12%E7%AC%94%E8%AE%B0-03/" target="_self">
-          
-          
-            
-          
-           为什么不使用 3x3 矩阵来作为变换矩阵
- 缩放（Scale）
-假设有一个向量u(x,y,z)Tu(x,y,z)^Tu(x,y,z)T（一般使用列向量来表示一个向量）。我们将缩放操作定义为
-S(x,y,z)=S(sxx,syy,szz)S(x,y,z)=S(s_xx,s_yy,s_zz)
-S(x,y,z)=S(sx​x,sy​y,sz​z)
-现在需要证明一下缩放操作是一种线性变换。
-S(u+v)
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/04/06/DirectX12%E7%AC%94%E8%AE%B0-03/" target="_self">
+        <div>
+          为什么不使用 3x3 矩阵来作为变换矩阵  缩放（Scale） 假设有一个向量u(x,y,z)Tu(x,y,z)^Tu(x,y,z)T（一般使用列向量来表示一个向量）。我们将缩放操作定义为 S(x,y,z)&#x3D;S(sxx,syy,szz)S(x,y,z)&#x3D;S(s_xx,s_yy,s_zz) S(x,y,z)&#x3D;S(sx​x,sy​y,sz​z) 现在需要证明一下缩放操作是一种线性变换。 S(u+v)
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -576,20 +597,39 @@ S(u+v)
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/">DirectX</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/" class="category-chain-item">DirectX</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CG/">CG</a>
+              <a href="/tags/CG/">#CG</a>
             
           </div>
         
@@ -608,18 +648,12 @@ S(u+v)
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/04/06/ASP.NET%20CORE%E7%AC%94%E8%AE%B0-01/" target="_self">
-          
-          
-            
-          
-           模型绑定到底用来做什么的
-简而言之，就是消费者和服务提供者沟通的中间载体。以Web Api为例，就是当 Api 消费者发送 http 请求数据时，与 Controller 交互时的一种数据载体，Asp.Net Core中是将请求的数据转换承一个键值对的数据结构存起来。根据键名称去和Asp.Net Core中的 Model 进行匹配并赋值。
- ASP.NET CORE 中数据的流向
-读取数据：数据
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/04/06/ASP.NET%20CORE%E7%AC%94%E8%AE%B0-01/" target="_self">
+        <div>
+          模型绑定到底用来做什么的 简而言之，就是消费者和服务提供者沟通的中间载体。以Web Api为例，就是当 Api 消费者发送 http 请求数据时，与 Controller 交互时的一种数据载体，Asp.Net Core中是将请求的数据转换承一个键值对的数据结构存起来。根据键名称去和Asp.Net Core中的 Model 进行匹配并赋值。  ASP.NET CORE 中数据的流向 读取数据：数据
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -631,20 +665,39 @@ S(u+v)
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Web/">Web</a>
-            
-              <a href="/categories/Web/ASP-NET-CORE/">ASP.NET CORE</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Web/ASP-NET-CORE/" class="category-chain-item">ASP.NET CORE</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Web/">Web</a>
+              <a href="/tags/Web/">#Web</a>
             
           </div>
         
@@ -663,17 +716,12 @@ S(u+v)
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/03/28/DirectX12%E7%AC%94%E8%AE%B0-02/" target="_self">
-          
-          
-            
-          
-           DirectX 12 的初始化
-DirectX 12 的初始化过程ID3d12CommandList
-
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/03/28/DirectX12%E7%AC%94%E8%AE%B0-02/" target="_self">
+        <div>
+          DirectX 12 的初始化 DirectX 12 的初始化过程ID3d12CommandList
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -685,20 +733,39 @@ DirectX 12 的初始化过程ID3d12CommandList
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/">DirectX</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/" class="category-chain-item">DirectX</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/CG/">CG</a>
+              <a href="/tags/CG/">#CG</a>
             
           </div>
         
@@ -743,32 +810,34 @@ DirectX 12 的初始化过程ID3d12CommandList
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
@@ -787,10 +856,22 @@ DirectX 12 的初始化过程ID3d12CommandList
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
 
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -800,43 +881,22 @@ DirectX 12 的初始化过程ID3d12CommandList
 
 
 
-  
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

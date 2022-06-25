@@ -13,10 +13,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="分类">
 <meta property="og:url" content="https://trickyrat.github.io/categories/index.html">
 <meta property="og:site_name" content="Meow">
@@ -24,15 +24,20 @@
 <meta property="article:author" content="trickyrat">
 <meta name="twitter:card" content="summary_large_image">
   
+  
+  
   <title>分类 - Meow</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
 
 
-<!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -41,21 +46,42 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
-  <header style="height: 60vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Meow</strong>
@@ -149,6 +175,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -161,29 +188,35 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="分类"></span>
           
         </div>
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
+        <div id="board"
           >
           
           <div class="container">
@@ -198,24 +231,27 @@
 <div class="category-list">
   
   
-  
-  
     
     
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="笔记"
         id="heading-7051dc52c184c205e39aa54b4664ae9b" role="tab" data-toggle="collapse" href="#collapse-7051dc52c184c205e39aa54b4664ae9b"
         aria-expanded="false"
       >
         笔记
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>12</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-7051dc52c184c205e39aa54b4664ae9b" role="tabpanel" aria-labelledby="heading-7051dc52c184c205e39aa54b4664ae9b">
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>12</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-7051dc52c184c205e39aa54b4664ae9b"
+           role="tabpanel" aria-labelledby="heading-7051dc52c184c205e39aa54b4664ae9b">
         
         
           
@@ -227,23 +263,27 @@
 
           
   
-  
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Redis"
         id="heading-e111446745a1825b862f8727ae63bce4" role="tab" data-toggle="collapse" href="#collapse-e111446745a1825b862f8727ae63bce4"
         aria-expanded="false"
       >
         Redis
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AC%94%E8%AE%B0/Redis/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>5</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-e111446745a1825b862f8727ae63bce4" role="tabpanel" aria-labelledby="heading-e111446745a1825b862f8727ae63bce4">
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/Redis/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>5</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-e111446745a1825b862f8727ae63bce4"
+           role="tabpanel" aria-labelledby="heading-e111446745a1825b862f8727ae63bce4">
         
         
           
@@ -252,35 +292,45 @@
     
       
       
-        <a href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-05/" class="list-group-item list-group-item-action">
+        <a href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-05/" title="Redis笔记-05"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Redis笔记-05</span>
         </a>
       
     
       
       
-        <a href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-04/" class="list-group-item list-group-item-action">
+        <a href="/2022/01/18/Redis%E7%AC%94%E8%AE%B0-04/" title="Redis笔记-04"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Redis笔记-04</span>
         </a>
       
     
       
       
-        <a href="/2021/12/01/Redis%E7%AC%94%E8%AE%B0-03/" class="list-group-item list-group-item-action">
+        <a href="/2021/12/01/Redis%E7%AC%94%E8%AE%B0-03/" title="Redis笔记-03"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Redis笔记-03</span>
         </a>
       
     
       
       
-        <a href="/2020/09/22/Redis%E7%AC%94%E8%AE%B0-02/" class="list-group-item list-group-item-action">
+        <a href="/2020/09/22/Redis%E7%AC%94%E8%AE%B0-02/" title="Redis笔记-02"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Redis笔记-02</span>
         </a>
       
     
       
       
-        <a href="/2020/09/19/Redis%E7%AC%94%E8%AE%B0-01/" class="list-group-item list-group-item-action">
+        <a href="/2020/09/19/Redis%E7%AC%94%E8%AE%B0-01/" title="Redis笔记-01"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Redis笔记-01</span>
         </a>
       
@@ -293,20 +343,25 @@
   
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="DirectX"
         id="heading-54ba95893e0ab4b695ebdf840e82b0f9" role="tab" data-toggle="collapse" href="#collapse-54ba95893e0ab4b695ebdf840e82b0f9"
         aria-expanded="false"
       >
         DirectX
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>3</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-54ba95893e0ab4b695ebdf840e82b0f9" role="tabpanel" aria-labelledby="heading-54ba95893e0ab4b695ebdf840e82b0f9">
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/DirectX/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>3</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-54ba95893e0ab4b695ebdf840e82b0f9"
+           role="tabpanel" aria-labelledby="heading-54ba95893e0ab4b695ebdf840e82b0f9">
         
         
           
@@ -315,21 +370,27 @@
     
       
       
-        <a href="/2020/04/06/DirectX12%E7%AC%94%E8%AE%B0-03/" class="list-group-item list-group-item-action">
+        <a href="/2020/04/06/DirectX12%E7%AC%94%E8%AE%B0-03/" title="DirectX12笔记-03"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">DirectX12笔记-03</span>
         </a>
       
     
       
       
-        <a href="/2020/03/28/DirectX12%E7%AC%94%E8%AE%B0-02/" class="list-group-item list-group-item-action">
+        <a href="/2020/03/28/DirectX12%E7%AC%94%E8%AE%B0-02/" title="DirectX12笔记-02 DirectX12管线"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">DirectX12笔记-02 DirectX12管线</span>
         </a>
       
     
       
       
-        <a href="/2020/03/27/DirectX12%E7%AC%94%E8%AE%B0-01/" class="list-group-item list-group-item-action">
+        <a href="/2020/03/27/DirectX12%E7%AC%94%E8%AE%B0-01/" title="DirectX12笔记-01 基础知识"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">DirectX12笔记-01 基础知识</span>
         </a>
       
@@ -342,20 +403,25 @@
   
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Rust"
         id="heading-f5e265d607cb720058fc166e00083fe8" role="tab" data-toggle="collapse" href="#collapse-f5e265d607cb720058fc166e00083fe8"
         aria-expanded="false"
       >
         Rust
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AC%94%E8%AE%B0/Rust/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>3</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-f5e265d607cb720058fc166e00083fe8" role="tabpanel" aria-labelledby="heading-f5e265d607cb720058fc166e00083fe8">
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/Rust/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>3</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-f5e265d607cb720058fc166e00083fe8"
+           role="tabpanel" aria-labelledby="heading-f5e265d607cb720058fc166e00083fe8">
         
         
           
@@ -364,21 +430,27 @@
     
       
       
-        <a href="/2020/10/26/Rust%E7%AC%94%E8%AE%B0-03/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/26/Rust%E7%AC%94%E8%AE%B0-03/" title="Rust笔记-03 函数"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Rust笔记-03 函数</span>
         </a>
       
     
       
       
-        <a href="/2020/10/23/Rust%E7%AC%94%E8%AE%B0-02/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/23/Rust%E7%AC%94%E8%AE%B0-02/" title="Rust笔记-02 数据类型"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Rust笔记-02 数据类型</span>
         </a>
       
     
       
       
-        <a href="/2020/10/20/Rust%E7%AC%94%E8%AE%B0-01/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/20/Rust%E7%AC%94%E8%AE%B0-01/" title="Rust笔记-01 Get Started"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Rust笔记-01 Get Started</span>
         </a>
       
@@ -391,20 +463,25 @@
   
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="C#"
         id="heading-d7efa19fbe7d3972fd5adb6024223d74" role="tab" data-toggle="collapse" href="#collapse-d7efa19fbe7d3972fd5adb6024223d74"
         aria-expanded="false"
       >
         C#
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AC%94%E8%AE%B0/C/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-d7efa19fbe7d3972fd5adb6024223d74" role="tabpanel" aria-labelledby="heading-d7efa19fbe7d3972fd5adb6024223d74">
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/C/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-d7efa19fbe7d3972fd5adb6024223d74"
+           role="tabpanel" aria-labelledby="heading-d7efa19fbe7d3972fd5adb6024223d74">
         
         
           
@@ -413,7 +490,9 @@
     
       
       
-        <a href="/2022/01/18/Net6%E7%AC%94%E8%AE%B0-01/" class="list-group-item list-group-item-action">
+        <a href="/2022/01/18/Net6%E7%AC%94%E8%AE%B0-01/" title=".Net6笔记-01"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">.Net6笔记-01</span>
         </a>
       
@@ -430,20 +509,25 @@
   
     
     
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="算法"
         id="heading-046a899ee7a6ec88d370211a518c9e80" role="tab" data-toggle="collapse" href="#collapse-046a899ee7a6ec88d370211a518c9e80"
         aria-expanded="false"
       >
         算法
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>9</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-046a899ee7a6ec88d370211a518c9e80" role="tabpanel" aria-labelledby="heading-046a899ee7a6ec88d370211a518c9e80">
+      
+        <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>9</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-046a899ee7a6ec88d370211a518c9e80"
+           role="tabpanel" aria-labelledby="heading-046a899ee7a6ec88d370211a518c9e80">
         
         
           
@@ -455,23 +539,27 @@
 
           
   
-  
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="LeetCode"
         id="heading-071fda8ffed879b16c3308d2133bac46" role="tab" data-toggle="collapse" href="#collapse-071fda8ffed879b16c3308d2133bac46"
         aria-expanded="false"
       >
         LeetCode
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>9</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-071fda8ffed879b16c3308d2133bac46" role="tabpanel" aria-labelledby="heading-071fda8ffed879b16c3308d2133bac46">
+      
+        <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>9</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-071fda8ffed879b16c3308d2133bac46"
+           role="tabpanel" aria-labelledby="heading-071fda8ffed879b16c3308d2133bac46">
         
         
           
@@ -480,63 +568,81 @@
     
       
       
-        <a href="/2022/02/14/Leetcode-540/" class="list-group-item list-group-item-action">
+        <a href="/2022/02/14/Leetcode-540/" title="Leetcode-540"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-540</span>
         </a>
       
     
       
       
-        <a href="/2021/10/26/Leetcode-33/" class="list-group-item list-group-item-action">
+        <a href="/2021/10/26/Leetcode-33/" title="Leetcode-33 Search in Rotated Sorted Array"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-33 Search in Rotated Sorted Array</span>
         </a>
       
     
       
       
-        <a href="/2020/08/11/Leetcode-468/" class="list-group-item list-group-item-action">
+        <a href="/2020/08/11/Leetcode-468/" title="Leetcode-468 Valid IP Address"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-468 Valid IP Address</span>
         </a>
       
     
       
       
-        <a href="/2020/04/09/Leetcode-25/" class="list-group-item list-group-item-action">
+        <a href="/2020/04/09/Leetcode-25/" title="Leetcode-25 Reverse Nodes in k-Group"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-25 Reverse Nodes in k-Group</span>
         </a>
       
     
       
       
-        <a href="/2020/04/09/Leetcode-242/" class="list-group-item list-group-item-action">
+        <a href="/2020/04/09/Leetcode-242/" title="Leetcode-242 Valid Anagram"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-242 Valid Anagram</span>
         </a>
       
     
       
       
-        <a href="/2020/04/09/Leetcode-20/" class="list-group-item list-group-item-action">
+        <a href="/2020/04/09/Leetcode-20/" title="Leetcode-20 	Valid Parentheses"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-20 	Valid Parentheses</span>
         </a>
       
     
       
       
-        <a href="/2019/11/22/Leetcode-03/" class="list-group-item list-group-item-action">
+        <a href="/2019/11/22/Leetcode-03/" title="Leetcode-03 Longest Substring Without Repeating Characters"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-03 Longest Substring Without Repeating Characters</span>
         </a>
       
     
       
       
-        <a href="/2019/11/21/Leetcode-02/" class="list-group-item list-group-item-action">
+        <a href="/2019/11/21/Leetcode-02/" title="Leetcode-02 Add Two Numbers"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-02 Add Two Numbers</span>
         </a>
       
     
       
       
-        <a href="/2019/11/20/Leetcode-01/" class="list-group-item list-group-item-action">
+        <a href="/2019/11/20/Leetcode-01/" title="Leetcode-01 Two Sum"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">Leetcode-01 Two Sum</span>
         </a>
       
@@ -553,20 +659,25 @@
   
     
     
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="教程"
         id="heading-b7824d5cd41d06de995a661879fefd3d" role="tab" data-toggle="collapse" href="#collapse-b7824d5cd41d06de995a661879fefd3d"
         aria-expanded="false"
       >
         教程
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>5</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-b7824d5cd41d06de995a661879fefd3d" role="tabpanel" aria-labelledby="heading-b7824d5cd41d06de995a661879fefd3d">
+      
+        <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>5</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-b7824d5cd41d06de995a661879fefd3d"
+           role="tabpanel" aria-labelledby="heading-b7824d5cd41d06de995a661879fefd3d">
         
         
           
@@ -578,23 +689,27 @@
 
           
   
-  
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="C语言"
         id="heading-d117f5dea6b7959c82d4fdb7490c555d" role="tab" data-toggle="collapse" href="#collapse-d117f5dea6b7959c82d4fdb7490c555d"
         aria-expanded="false"
       >
         C语言
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E6%95%99%E7%A8%8B/C%E8%AF%AD%E8%A8%80/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>5</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-d117f5dea6b7959c82d4fdb7490c555d" role="tabpanel" aria-labelledby="heading-d117f5dea6b7959c82d4fdb7490c555d">
+      
+        <a href="/categories/%E6%95%99%E7%A8%8B/C%E8%AF%AD%E8%A8%80/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>5</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-d117f5dea6b7959c82d4fdb7490c555d"
+           role="tabpanel" aria-labelledby="heading-d117f5dea6b7959c82d4fdb7490c555d">
         
         
           
@@ -603,35 +718,45 @@
     
       
       
-        <a href="/2020/10/12/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-05/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/12/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-05/" title="C语言教程-05 库"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">C语言教程-05 库</span>
         </a>
       
     
       
       
-        <a href="/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-04/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-04/" title="C语言教程-04 函数"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">C语言教程-04 函数</span>
         </a>
       
     
       
       
-        <a href="/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-03/" class="list-group-item list-group-item-action">
+        <a href="/2020/10/08/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-03/" title="C语言教程-03 指针"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">C语言教程-03 指针</span>
         </a>
       
     
       
       
-        <a href="/2020/09/30/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-02/" class="list-group-item list-group-item-action">
+        <a href="/2020/09/30/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-02/" title="C语言教程-02 变量"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">C语言教程-02 变量</span>
         </a>
       
     
       
       
-        <a href="/2020/09/30/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-01/" class="list-group-item list-group-item-action">
+        <a href="/2020/09/30/C%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B-01/" title="C语言教程-01 启航"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">C语言教程-01 启航</span>
         </a>
       
@@ -648,20 +773,25 @@
   
     
     
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Web"
         id="heading-c6e190b284633c48e39e55049da3cce8" role="tab" data-toggle="collapse" href="#collapse-c6e190b284633c48e39e55049da3cce8"
         aria-expanded="false"
       >
         Web
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/Web/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-c6e190b284633c48e39e55049da3cce8" role="tabpanel" aria-labelledby="heading-c6e190b284633c48e39e55049da3cce8">
+      
+        <a href="/categories/Web/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-c6e190b284633c48e39e55049da3cce8"
+           role="tabpanel" aria-labelledby="heading-c6e190b284633c48e39e55049da3cce8">
         
         
           
@@ -673,23 +803,27 @@
 
           
   
-  
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="ASP.NET CORE"
         id="heading-fcb55d0a52ca353e76e2ae313d89b245" role="tab" data-toggle="collapse" href="#collapse-fcb55d0a52ca353e76e2ae313d89b245"
         aria-expanded="false"
       >
         ASP.NET CORE
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/Web/ASP-NET-CORE/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-fcb55d0a52ca353e76e2ae313d89b245" role="tabpanel" aria-labelledby="heading-fcb55d0a52ca353e76e2ae313d89b245">
+      
+        <a href="/categories/Web/ASP-NET-CORE/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-fcb55d0a52ca353e76e2ae313d89b245"
+           role="tabpanel" aria-labelledby="heading-fcb55d0a52ca353e76e2ae313d89b245">
         
         
           
@@ -698,7 +832,9 @@
     
       
       
-        <a href="/2020/04/06/ASP.NET%20CORE%E7%AC%94%E8%AE%B0-01/" class="list-group-item list-group-item-action">
+        <a href="/2020/04/06/ASP.NET%20CORE%E7%AC%94%E8%AE%B0-01/" title="ASP.NET CORE笔记 模型绑定"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">ASP.NET CORE笔记 模型绑定</span>
         </a>
       
@@ -715,20 +851,25 @@
   
     
     
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数据库"
         id="heading-68051bf4aa2743b030984b694628ee9c" role="tab" data-toggle="collapse" href="#collapse-68051bf4aa2743b030984b694628ee9c"
         aria-expanded="false"
       >
         数据库
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-68051bf4aa2743b030984b694628ee9c" role="tabpanel" aria-labelledby="heading-68051bf4aa2743b030984b694628ee9c">
+      
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-68051bf4aa2743b030984b694628ee9c"
+           role="tabpanel" aria-labelledby="heading-68051bf4aa2743b030984b694628ee9c">
         
         
           
@@ -740,23 +881,27 @@
 
           
   
-  
     
     
-    <div class="category-sub row">
-      <a
-        class="category-subitem collapsed list-group-item category-item-action col-10 col-md-11"
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SQLServer"
         id="heading-8e1743cf3475c1466048d765e16da43b" role="tab" data-toggle="collapse" href="#collapse-8e1743cf3475c1466048d765e16da43b"
         aria-expanded="false"
       >
         SQLServer
+        <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
-      <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/SQLServer/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse collapse" id="collapse-8e1743cf3475c1466048d765e16da43b" role="tabpanel" aria-labelledby="heading-8e1743cf3475c1466048d765e16da43b">
+      
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/SQLServer/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-8e1743cf3475c1466048d765e16da43b"
+           role="tabpanel" aria-labelledby="heading-8e1743cf3475c1466048d765e16da43b">
         
         
           
@@ -765,7 +910,9 @@
     
       
       
-        <a href="/2021/12/08/SQLServer%E7%B4%A2%E5%BC%9501/" class="list-group-item list-group-item-action">
+        <a href="/2021/12/08/SQLServer%E7%B4%A2%E5%BC%9501/" title="SQLServer索引01"
+           class="list-group-item list-group-item-action
+           ">
           <span class="category-post">SQLServer索引01</span>
         </a>
       
@@ -781,6 +928,7 @@
     </div>
   
 </div>
+
 
               </div>
             </div>
@@ -809,32 +957,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
@@ -853,10 +1003,22 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
 
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -866,43 +1028,22 @@
 
 
 
-  
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

@@ -6,7 +6,7 @@ categories: [笔记, Redis]
 
 ## Redis中的布隆过滤器（BloomFilter）
 
-`Redis`官方在`4.0`版本中提供了插件功能，此时可以将`rebloom`作为插件加载到Redis Server中，一边给Redis提供布隆去重功能。
+`Redis`官方在`4.0`版本中提供了插件功能，此时可以将`rebloom`作为插件加载到Redis Server中，给Redis提供布隆去重功能。
 
 ```docker
 docker pull redislab/rebloom
