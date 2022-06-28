@@ -209,7 +209,7 @@ custom_html: ''
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:  # 网页访问统计
-  enable: false
+  enable: true
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
@@ -246,11 +246,11 @@ web_analytics:  # 网页访问统计
   # LeanCloud 计数统计，可用于 PV UV 展示，如果 `web_analytics: enable` 没有开启，PV UV 展示只会查询不会增加
   # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
   leancloud:
-    app_id:
-    app_key:
+    app_id: I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz
+    app_key: Ec9djGTOMtnuxsIavrcIqQgr
     # REST API 服务器地址，国际版不填
     # Only the Chinese mainland users need to set
-    server_url:
+    server_url: 'https://i3ui6xdt.lc-cn-n1-shared.com'
 
 # 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
 # Lazy loading of images and comment plugin on the page
@@ -379,12 +379,12 @@ footer:
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: false
+    enable: true
 
     # 统计数据来源，使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
     # Options: busuanzi | leancloud
-    source: "busuanzi"
+    source: "leancloud"
 
     # 页面显示的文本，{}是数字的占位符（必须包含)，下同
     # Displayed text, {} is a placeholder for numbers (must be included), the same below
@@ -930,44 +930,42 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/
+  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
 
-  github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
+  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
 
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/
+  jquery: https://lib.baomitu.com/jquery/3.6.0/
 
-  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/
+  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
 
-  highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/
+  prismjs: https://lib.baomitu.com/prism/1.27.0/
 
-  prismjs: https://cdn.jsdelivr.net/npm/prismjs@1.23.0/
+  tocbot: https://lib.baomitu.com/tocbot/4.18.2/
 
-  tocbot: https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/
+  typed: https://lib.baomitu.com/typed.js/2.0.12/
 
-  typed: https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/
+  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
 
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
+  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
 
-  nprogress: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/
+  mathjax: https://lib.baomitu.com/mathjax/3.2.1/
 
-  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/
-
-  katex: https://cdn.jsdelivr.net/npm/katex@0.13.10/dist/
+  katex: https://lib.baomitu.com/KaTeX/0.15.6/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/
+  clipboard: https://lib.baomitu.com/clipboard.js/2.0.10/
 
-  mermaid: https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/
+  mermaid: https://lib.baomitu.com/mermaid/8.14.0/
 
-  valine: https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
+  valine: https://lib.baomitu.com/valine/1.4.17/
 
-  waline: https://cdn.jsdelivr.net/npm/@waline/client@0.16.2/dist/
+  waline: https://lib.baomitu.com/waline/2.5.1/
 
-  gitalk: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/
+  gitalk: https://lib.baomitu.com/gitalk/1.7.2/
 
-  disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/
+  disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/
 
-  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/
+  twikoo: https://lib.baomitu.com/twikoo/1.5.11/
 
-  hint: /lib/hint/
+  hint: https://lib.baomitu.com/hint.css/2.7.0/
