@@ -329,10 +329,10 @@
 <p>指针可谓是 C 语言的灵魂也是难点，</p>
 <p>指针也是一个内置类型</p>
 <p>从右向左，可以清晰分辨指针</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">int</span> *ptr;  <span class="hljs-comment">// 声明一个指向int类型的指针变量ptr</span><br><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// 声明一个int类型的变量i并赋值0</span><br>ptr = &amp;i;  <span class="hljs-comment">// 将i的内存地址（非物理内存地址）赋值给ptr</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> *ptr;  <span class="hljs-comment">// 声明一个指向int类型的指针变量ptr</span><br><span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// 声明一个int类型的变量i并赋值0</span><br>ptr = &amp;i;  <span class="hljs-comment">// 将i的内存地址（非物理内存地址）赋值给ptr</span><br></code></pre></td></tr></table></figure>
 <h2 id="指针分类"><a class="markdownIt-Anchor" href="#指针分类"></a> 指针分类</h2>
 <h3 id="指针的指针pointer-to-pointer"><a class="markdownIt-Anchor" href="#指针的指针pointer-to-pointer"></a> 指针的指针（Pointer to pointer）</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">int</span> **pp; <span class="hljs-comment">// 声明一个指向int*类型的指针变量pp</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> **pp; <span class="hljs-comment">// 声明一个指向int*类型的指针变量pp</span><br></code></pre></td></tr></table></figure>
 <h3 id="函数指针function-pointer"><a class="markdownIt-Anchor" href="#函数指针function-pointer"></a> 函数指针（Function Pointer）</h3>
 <blockquote>
 <p>return_type (*pointer_name)(param_type1, param_type2,…);</p>
