@@ -1,8 +1,8 @@
 ---
 title: Leetcode-02 Add Two Numbers
 date: 2019-11-21 23:22:16
-categories: [算法, LeetCode]
-tags: 算法
+categories: [Algorithms, LeetCode]
+tags: Algorithms
 banner_img: /img/bg/Leetcode-02/20191117.jpg
 ---
 

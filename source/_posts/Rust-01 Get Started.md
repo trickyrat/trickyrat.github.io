@@ -1,30 +1,33 @@
 ---
-title: Rust笔记-01 Get Started
+title: Rust-01 Get Started
 date: 2020-10-20 10:17:25
-categories: [笔记, Rust]
-tags: 编程语言
+categories: [Tutorial, Rust]
+tags: Programming Language
 ---
 
-## Rust 的安装
+## 1.1 Installation
 
-工欲善其事必先利其器，我们学习 Rust 那么首先得有 Rust，所以我们可以在[Rust 官网](https://www.rust-lang.org/zh-CN/)下载相应平台的安装器，按照官网说明安装。安装完成以后打开任意命令行工具（cmd、powershell、bash 等等，推荐使用[PowerShellCore](https://github.com/PowerShell/PowerShell)和[Windows Terminal](https://github.com/microsoft/terminal)），输入`rustc --version`，便可以得到一下信息，（如果没有出现则按照官网安装教程重新安装）
-![rustc 版本命令截图](/img/bg/rust-01/rust-01-12.png)
+The first thing to install Rust. We will download Rust through `rustup`, a command line tool for managing Rust versions and associated tools. You will need an internet connection for the download. You can down `rsutup` from [Rust Official Web Site](https://www.rust-lang.org/).  
+After you install the `rustup` following installation guide, you can open a command line tool like bash in Linux/Max OS or powershell in Windows. Type `rustup --version`. If no errors encountered, you will see result like  
+![rustc 版本命令截图](../img/bg/rust-01/rust-01-12.png)
+
+> We recommend [PowerShell Core](https://github.com/PowerShell/PowerShell) and [Windows Terminal](https://github.com/microsoft/terminal) in Windows
 
 安装好 rust 后，我们需要了解几个东西
 
-## rustc
+## 1.2 rustc
 
 `rustc`是 rust 的编译器，负责将 rs 文件源码编译到可运行文件或者库的二进制代码
 
-## rustup
+## 1.3 rustup
 
 `rustup`是 rust 的升级管理工具，负责升级 rust 的版本，常用命令`rustup update`用来升级 rust
 
-## cargo
+## 1.4 cargo
 
 一般都不直接使用`rustc`来直接编译 rs 文件，而是选择`cargo`。 `cargo`是 Rust 的包管理器，可以用来创建项目、安装依赖、类型检测、编译、运行以及测试项目等功能。cargo`是一个功能强大的工具。`cargo run`能够自动化调用`rustc` 对 rs 文件进行编译产出二进制文件并运行二进制文件。
 
-### 常用的 cargo 命令
+### common cargo commands
 
 | 命令        | 说明                                                                 | 示例                             |
 | :---------- | :------------------------------------------------------------------- | :------------------------------- |
@@ -36,11 +39,11 @@ tags: 编程语言
 
 详细的说明可以查看[官方文档](https://doc.rust-lang.org/cargo/index.html)。
 
-## IDE
+## 1.5 IDE
 
 现在能够开发 rust 的工具已经有很多了，比如 Jetbrains 家的[Idea](https://www.jetbrains.com/idea/)（需要添加 rust 插件）以及 [VS Code]()
 
-## 第一个 rust 项目
+## 1.6 Hello World!
 
 既然已经有了 rust 的运行环境，那么我们便开始创建第一个 rust 项目。使用`cargo new hello-world`命令创建一个名为`hello-world`的项目，然后`cd hello-world`进入项目目录后可以看到项目的结构
 

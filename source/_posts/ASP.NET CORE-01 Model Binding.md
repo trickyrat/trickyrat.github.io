@@ -1,5 +1,5 @@
 ---
-title: ASP.NET CORE笔记 模型绑定
+title: ASP.NET CORE-01 Model Binding
 date: 2020-04-06 16:01:07
 categories: [Web, ASP.NET CORE]
 tags: Web

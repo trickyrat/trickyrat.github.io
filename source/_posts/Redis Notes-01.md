@@ -1,20 +1,20 @@
 ---
-title: Redis笔记-01
+title: Redis Notes-01
 date: 2020-09-19 16:32:19
-categories: [笔记, Redis]
-tags: 数据库
+categories: [Notes, Redis]
+tags: Notes
 ---
 
 # Redis 命令
 
 ## 创建和获取 key
 
-| 命令 |                     说明                      |        例子        |
-| :--: | :-------------------------------------------: | :----------------: |
-| set  |      创建一个名为 key 值为 value 键值对       |    set views 10    |
-| get  | 获取名为 key 的值，存在返回值，不存在返回 nil |     get views      |
-| mset |              一次创建多个键值对               | mset key1 1 key2 2 |
-| mget |              一次获取多个键的值               |   mget key1 key2   |
+| 命令  |                     说明                      |        例子        |
+| :---: | :-------------------------------------------: | :----------------: |
+|  set  |      创建一个名为 key 值为 value 键值对       |    set views 10    |
+|  get  | 获取名为 key 的值，存在返回值，不存在返回 nil |     get views      |
+| mset  |              一次创建多个键值对               | mset key1 1 key2 2 |
+| mget  |              一次获取多个键的值               |   mget key1 key2   |
 
 ```bash
 local_host:0>set views 10
@@ -31,10 +31,10 @@ local_host:0>mget key1 key2 key3
 
 ## 自增自减
 
-| 命令 |       说明        |    例子    |
-| :--: | :---------------: | :--------: |
-| incr | 自增 key 的 value | incr views |
-| decr | 自减 key 的 value | decr views |
+| 命令  |       说明        |    例子    |
+| :---: | :---------------: | :--------: |
+| incr  | 自增 key 的 value | incr views |
+| decr  | 自减 key 的 value | decr views |
 
 ```bash
 local_host:0>incr views
@@ -88,9 +88,9 @@ null
 
 ## 删除某个 key
 
-| 命令 |     说明     |   例子   |
-| :--: | :----------: | :------: |
-| del  | 删除某个 key | del key3 |
+| 命令  |     说明     |   例子   |
+| :---: | :----------: | :------: |
+|  del  | 删除某个 key | del key3 |
 
 ```bash
 local_host:0>del key3
@@ -99,9 +99,9 @@ local_host:0>del key3
 
 ## 查询 value 的类型
 
-| 命令 |         说明          |    例子    |
-| :--: | :-------------------: | :--------: |
-| type | 查看 key 的存储的类型 | type views |
+| 命令  |         说明          |    例子    |
+| :---: | :-------------------: | :--------: |
+| type  | 查看 key 的存储的类型 | type views |
 
 ```bash
 local_host:0>type views
@@ -110,9 +110,9 @@ local_host:0>type views
 
 ## 模式匹配查询 key
 
-| 命令 |         说明         |  例子   |
-| :--: | :------------------: | :-----: |
-| keys | 根据模式匹配查询 key | keys \* |
+| 命令  |         说明         |  例子   |
+| :---: | :------------------: | :-----: |
+| keys  | 根据模式匹配查询 key | keys \* |
 
 ```bash
 local_host:0>keys *

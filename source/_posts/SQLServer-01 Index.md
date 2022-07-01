@@ -1,7 +1,7 @@
 ---
-title: SQLServer索引01
+title: SQLServer-01 Index
 date: 2021-12-08 23:46:28
-categories: [数据库, SQLServer]
+categories: [Database, SQLServer]
 ---
 
 ## 不能创建索引的字段类型

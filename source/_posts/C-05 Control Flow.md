@@ -1,8 +1,8 @@
 ---
-title: C语言教程-05 库
+title: C-05 Control Flow
 date: 2020-10-12 14:45:03
-categories: [教程, C语言]
-tags: 编程语言
+categories: [Tutorial, C]
+tags: Programming Language
 ---
 
 ## 二分搜索（bsearch）

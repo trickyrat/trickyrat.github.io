@@ -1,8 +1,8 @@
 ---
 title: Leetcode-242 Valid Anagram
 date: 2020-04-09 12:52:50
-categories: [算法, LeetCode]
-tags: 算法
+categories: [Algorithms, LeetCode]
+tags: Algorithms
 banner_img: /img/bg/Leetcode-242/landscape.jpg
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: C语言教程-03 指针
+title: C-03 Pointer
 date: 2020-10-08 13:27:37
-categories: [教程, C语言]
-tags: 编程语言
+categories: [Tutorial, C]
+tags: Programming Language
 ---
 
 # 指针（Pointer）

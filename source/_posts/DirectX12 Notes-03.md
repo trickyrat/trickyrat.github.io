@@ -1,8 +1,8 @@
 ---
-title: DirectX12笔记-03
+title: DirectX12 Notes-03
 date: 2020-04-06 16:56:04
-categories: [笔记, DirectX]
-tags: CG
+categories: [Notes, DirectX]
+tags: Notes
 math: true
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: Redis笔记-03
+title: Redis Notes-03
 date: 2021-12-01 15:58:48
-categories: [笔记, Redis]
+categories: [Notes, Redis]
+tags: Notes
 ---
 
 ## Redis 事务

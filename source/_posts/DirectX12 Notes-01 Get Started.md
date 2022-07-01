@@ -1,8 +1,8 @@
 ---
-title: DirectX12笔记-01 基础知识
+title: DirectX12 Notes-01 Get Started
 date: 2020-03-27 21:31:07
-categories: [笔记, DirectX]
-tags: CG
+categories: [Notes, DirectX]
+tags: Notes
 math: true
 ---
 

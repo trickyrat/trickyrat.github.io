@@ -1,7 +1,8 @@
 ---
-title: Redis笔记-05
+title: Redis Notes-05
 date: 2022-01-18 01:47:14
-categories: [笔记, Redis]
+categories: [Notes, Redis]
+tags: Notes
 ---
 
 ## Redis中的布隆过滤器（BloomFilter）

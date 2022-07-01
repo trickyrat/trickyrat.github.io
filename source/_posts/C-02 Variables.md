@@ -1,8 +1,8 @@
 ---
-title: C语言教程-02 变量
+title: C-02 Variables
 date: 2020-09-30 15:07:02
-categories: [教程, C语言]
-tags: 编程语言
+categories: [Tutorial, C]
+tags: Programming Language
 ---
 
 ## 变量

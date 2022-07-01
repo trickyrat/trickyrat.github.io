@@ -1,30 +1,30 @@
 ---
-title: Leetcode-540
+title: Leetcode-540 Single Element in a Sorted Array
 date: 2022-02-14 20:52:33
-categories:  [算法, LeetCode]
-tags: 算法
+categories:  [Algorithms, LeetCode]
+tags: Algorithms
 ---
 
 
-## 题目描述
+## Description
 
-给你一个仅由整数组成的有序数组，其中每个元素都会出现两次，唯有一个数只会出现一次。  
+You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.  
 
-请你找出并返回只出现一次的那个数。  
+Return the single element that appears only once.  
 
-你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。  
+Your solution must run in O(log n) time and O(1) space.  
 
-## 示例
+## Examples
 
-示例  1:
+Example  1:
 
-> 输入: nums = [1,1,2,3,3,4,4,8,8]  
-> 输出: 2  
+> Input: nums = [1,1,2,3,3,4,4,8,8]  
+> Output: 2  
 
-示例 2:
+Example 2:
 
-> 输入: nums =  [3,3,7,7,10,11,11]  
-> 输出: 10  
+> Input: nums =  [3,3,7,7,10,11,11]  
+> Output: 10  
 
 ## 思路
 
@@ -35,8 +35,7 @@ tags: 算法
 当mid为奇数时，我们需要比较nums[mid]和nums[mid-1]是否相等  
 如果`mid < x`，那么目标值便是在右侧，相应地，当 `mid > x`，则目标值在左侧。特殊地，我们可以使用异或操作目标，因为当mid为偶数时，`mid + 1 = mid ^ 1`；当mid为奇数时，`mid - 1 = mid ^ 1`。因此可以不用再去判断mid的奇偶性，而是判断 `nums[mid]` 和 `nums[mid ^ 1]` 大小进行搜索。
 
-## 实现
-
+## Solution
 
 ### C#
 

@@ -2,8 +2,8 @@
 date: "2019-11-20 21:10:36"
 layout: post
 title: Leetcode-01 Two Sum
-categories: [算法, LeetCode]
-tags: 算法
+categories: [Algorithms, LeetCode]
+tags: Algorithms
 banner_img: /img/bg/Leetcode-01/20191116.jpg
 ---
 

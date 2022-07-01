@@ -4,7 +4,7 @@ subtitle: ""
 description: ""
 keywords:
 author: trickyrat
-language: zh-CN
+language: en
 timezone: ""
 
 # URL
@@ -67,21 +67,21 @@ index_generator:
 default_category: uncategorized
 
 category_map:
-  - [算法, LeetCode]
-  - [笔记, DirectX]
+  - [Algorithms, LeetCode]
+  - [Notes, DirectX]
   - [Web, ASP.NET CORE]
-  - [教程, Redis]
-  - [教程, C]
-  - [笔记, C#]
-  - [笔记, Rust]
-  - [数据库, SQLServer]
+  - [Tutorial, Redis]
+  - [Tutorial, C]
+  - [Notes, C#]
+  - [Tutorial, Rust]
+  - [Database, SQLServer]
 
 tag_map:
   - Database
   - Algorithms
   - Web
   - CG
-  - Language
+  - Programming Language
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

@@ -1,8 +1,8 @@
 ---
-title: Redis笔记-02
+title: Redis Notes-02
 date: 2020-09-22 10:41:38
-categories: [笔记, Redis]
-tags: 数据库
+categories: [Notes, Redis]
+tags: Notes
 ---
 
 # Redis 类型

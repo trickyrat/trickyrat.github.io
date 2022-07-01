@@ -1,8 +1,8 @@
 ---
 title: Leetcode-33 Search in Rotated Sorted Array
 date: 2021-10-26 13:13:38
-categories: [算法, LeetCode]
-tags: 算法
+categories: [Algorithms, LeetCode]
+tags: Algorithms
 banner_img: /img/bg/Leetcode-25/the-road.jpg
 ---
 

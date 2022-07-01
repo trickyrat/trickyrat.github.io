@@ -1,8 +1,8 @@
 ---
-title: DirectX12笔记-02 DirectX12管线
+title: DirectX12 Notes-02 Pipeline
 date: 2020-03-28 20:47:36
-categories: [笔记, DirectX]
-tags: CG
+categories: [Notes, DirectX]
+tags: Notes
 math: true
 ---
 

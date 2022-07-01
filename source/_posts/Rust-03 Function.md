@@ -1,8 +1,8 @@
 ---
-title: Rust笔记-03 函数
+title: Rust-03 Function
 date: 2020-10-26 10:06:51
-categories: [笔记, Rust]
-tags: 编程语言
+categories: [Tutorial, Rust]
+tags: Programming Language
 ---
 
 ## Function

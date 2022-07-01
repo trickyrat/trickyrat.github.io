@@ -1,8 +1,8 @@
 ---
-title: C语言教程-04 函数
+title: C-04 Function
 date: 2020-10-08 13:28:09
-categories: [教程, C语言]
-tags: 编程语言
+categories: [Tutorial, C]
+tags: Programming Language
 ---
 
 ## 函数

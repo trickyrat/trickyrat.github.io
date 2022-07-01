@@ -1,8 +1,8 @@
 ---
-title: C语言教程-01 启航
+title: C-01 Get Started
 date: 2020-09-30 14:10:58
-categories: [教程, C语言]
-tags: 编程语言
+categories: [Tutorial, C]
+tags: Programming Language
 mermaid: true
 banner_img: /img/bg/c-01/TawnyFrogmouth.jpg
 ---

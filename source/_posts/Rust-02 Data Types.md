@@ -1,8 +1,8 @@
 ---
-title: Rust笔记-02 数据类型
+title: Rust-02 Data Types
 date: 2020-10-23 13:59:34
-categories: [笔记, Rust]
-tags: 编程语言
+categories: [Tutorial, Rust]
+tags: Programming Language
 ---
 
 ## Integer Number
