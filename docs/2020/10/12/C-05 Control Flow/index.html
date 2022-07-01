@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="trickyrat">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="二分搜索（bsearch） C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数    参数名 说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C-05 Control Flow">
+<meta property="og:url" content="https://trickyrat.github.io/2020/10/12/C-05%20Control%20Flow/index.html">
+<meta property="og:site_name" content="Meow">
+<meta property="og:description" content="二分搜索（bsearch） C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数    参数名 说明">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-12T06:45:03.000Z">
+<meta property="article:modified_time" content="2022-06-29T14:57:35.585Z">
+<meta property="article:author" content="trickyrat">
+<meta property="article:tag" content="Programming Language">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>C-05 Control Flow - Meow</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz","app_key":"Ec9djGTOMtnuxsIavrcIqQgr","server_url":"https://i3ui6xdt.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Meow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C-05 Control Flow"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        trickyrat
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-12 14:45" pubdate>
+          October 12, 2020 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          9 minutes
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C-05 Control Flow</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    Last updated on 2 days ago
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="二分搜索bsearch"><a class="markdownIt-Anchor" href="#二分搜索bsearch"></a> 二分搜索（bsearch）</h2>
+<p>C 标准库实现了二分搜索的函数 bsearch</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> *<span class="hljs-title function_">bsearch</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *key, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *ptr,</span><br><span class="hljs-params">              <span class="hljs-type">size_t</span> count, <span class="hljs-type">size_t</span> size,</span><br><span class="hljs-params">              <span class="hljs-type">int</span> (*comp)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="参数"><a class="markdownIt-Anchor" href="#参数"></a> 参数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">key</td>
+<td style="text-align:center">指向要查找的元素的指针</td>
+</tr>
+<tr>
+<td style="text-align:center">ptr</td>
+<td style="text-align:center">指向要检验的数组的指针</td>
+</tr>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">数组的元素数目</td>
+</tr>
+<tr>
+<td style="text-align:center">size</td>
+<td style="text-align:center">数组每个元素的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">comp</td>
+<td style="text-align:center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="返回值"><a class="markdownIt-Anchor" href="#返回值"></a> 返回值</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">null pointer</td>
+<td style="text-align:center">在给定的数组中没有找到该元素</td>
+</tr>
+<tr>
+<td style="text-align:center">指向与*key 比较相等的指针</td>
+<td style="text-align:center">在给定的数组中找到该元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="二分搜索示例"><a class="markdownIt-Anchor" href="#二分搜索示例"></a> 二分搜索示例</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-comment">// 定义带有可以比较元素的结构体</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">data</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">int</span> nr;<br>    <span class="hljs-type">char</span> <span class="hljs-type">const</span> *value;<br>&#125; Data;<br><span class="hljs-comment">// 定义比较函数</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">data_cmp</span><span class="hljs-params">(<span class="hljs-type">void</span> <span class="hljs-type">const</span> *lhs, <span class="hljs-type">void</span> <span class="hljs-type">const</span> *rhs)</span><br>&#123;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> l = lhs;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> r = rhs;<br>    <span class="hljs-keyword">return</span> (l-&gt;nr &gt; r-&gt;nr) - (l-&gt;nr &lt; r-&gt;nr);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    Data pairs[] = &#123;<br>        &#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Foo&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Bar&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Hello&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">4</span>, <span class="hljs-string">&quot;World&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">5</span>, <span class="hljs-string">&quot;Jacky&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">6</span>, <span class="hljs-string">&quot;John&quot;</span>&#125;&#125;;<br><br>    Data key = &#123;.nr = <span class="hljs-number">3</span>&#125;;<br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;中的bsearch函数，进行二分搜索查找元素</span><br>    Data <span class="hljs-type">const</span> *res = bsearch(&amp;key, pairs, <span class="hljs-keyword">sizeof</span> pairs / <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>],<br>                              <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>], data_cmp);<br>    <span class="hljs-keyword">if</span> (res)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d: %s\n&quot;</span>, res-&gt;nr, res-&gt;value);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d not found\n&quot;</span>, key.nr);<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>编译后执行结果：</p>
+<blockquote>
+<p>clang main.c -std=c11 -Wall -o main.out &amp;&amp; ./main.out<br />
+NO 3: Hello</p>
+</blockquote>
+<h2 id="快速排序qsort"><a class="markdownIt-Anchor" href="#快速排序qsort"></a> 快速排序（qsort）</h2>
+<p>C 标准库实现了快速排序的函数 qsort</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">qsort</span><span class="hljs-params">(<span class="hljs-type">void</span> *ptr, <span class="hljs-type">size_t</span> count, <span class="hljs-type">size_t</span> size,</span><br><span class="hljs-params">           <span class="hljs-type">int</span> (*comp)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="参数-2"><a class="markdownIt-Anchor" href="#参数-2"></a> 参数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ptr</td>
+<td style="text-align:center">指向待排序的数组的指针</td>
+</tr>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">数组的元素数目</td>
+</tr>
+<tr>
+<td style="text-align:center">size</td>
+<td style="text-align:center">数组每个元素的字节数</td>
+</tr>
+<tr>
+<td style="text-align:center">comp</td>
+<td style="text-align:center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="快速排序示例"><a class="markdownIt-Anchor" href="#快速排序示例"></a> 快速排序示例</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;limits.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">compare_ints</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *a, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *b)</span><br>&#123;<br>    <span class="hljs-type">int</span> arg1 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)a;<br>    <span class="hljs-type">int</span> arg2 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)b;<br>    <span class="hljs-keyword">return</span> (arg1 &gt; arg2) - (arg1 &lt; arg2);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    <span class="hljs-type">int</span> ints[] = &#123; <span class="hljs-number">-2</span>,<br>                   <span class="hljs-number">99</span>,<br>                   INT_MAX,<br>                   <span class="hljs-number">0</span>,<br>                   <span class="hljs-number">-743</span>,<br>                   <span class="hljs-number">10</span>,<br>                   <span class="hljs-number">2</span>,<br>                   <span class="hljs-number">44</span>,<br>                   INT_MIN,<br>                   <span class="hljs-number">2</span> &#125;;<br><br>    <span class="hljs-type">int</span> size = <span class="hljs-keyword">sizeof</span> ints / <span class="hljs-keyword">sizeof</span> *ints;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Unordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;的快排算法，对数组进行排序</span><br>    qsort(ints, size, <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>), compare_ints);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Ordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>编译后执行结果：</p>
+<blockquote>
+<p>clang main.c -std=c11 -Wall -o main.out &amp;&amp; ./main.out<br />
+Unordered: -2 99 2147483647 0 -743 10 2 44 -2147483648 2<br />
+Ordered: -2147483648 -743 -2 0 2 2 10 44 99 2147483647</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tutorial/" class="category-chain-item">Tutorial</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Tutorial/C/" class="category-chain-item">C</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Programming-Language/">#Programming Language</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C-05 Control Flow</div>
+      <div>https://trickyrat.github.io/2020/10/12/C-05 Control Flow/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>trickyrat</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 12, 2020</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>Licensed under</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/20/Rust-01%20Get%20Started/" title="Rust-01 Get Started">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Rust-01 Get Started</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/08/C-04%20Function/" title="C-04 Function">
+                        <span class="hidden-mobile">C-04 Function</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz","appKey":"Ec9djGTOMtnuxsIavrcIqQgr","path":"window.location.pathname","placeholder":"Comment here...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"en","highlight":true,"recordIP":false,"serverURLs":"https://i3ui6xdt.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
