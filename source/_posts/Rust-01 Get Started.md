@@ -9,7 +9,7 @@ tags: Programming Language
 
 The first thing to install Rust. We will download Rust through `rustup`, a command line tool for managing Rust versions and associated tools. You will need an internet connection for the download. You can down `rsutup` from [Rust Official Web Site](https://www.rust-lang.org/).  
 After you install the `rustup` following installation guide, you can open a command line tool like bash in Linux/Max OS or powershell in Windows. Type `rustup --version`. If no errors encountered, you will see result like  
-![rustc 版本命令截图](../img/bg/rust-01/rust-01-12.png)
+![rustc 版本命令截图](/img/bg/rust-01/rust-01-12.png)
 
 > We recommend [PowerShell Core](https://github.com/PowerShell/PowerShell) and [Windows Terminal](https://github.com/microsoft/terminal) in Windows
 
