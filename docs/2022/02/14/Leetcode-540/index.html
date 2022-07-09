@@ -24,7 +24,7 @@
 <meta property="og:description" content="Description You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once. Return the single element that appea">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-14T12:52:33.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.242Z">
+<meta property="article:modified_time" content="2022-07-09T18:27:19.539Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +254,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.8k words
+          1.8k characters
         
       </span>
     
@@ -317,7 +317,7 @@
               <p class="note note-info">
                 
                   
-                    Last updated on 10 minutes ago
+                    Last updated on 17 minutes ago
                   
                 
               </p>
@@ -340,7 +340,7 @@ Output: 2</p>
 <p>Input: nums =  [3,3,7,7,10,11,11]<br />
 Output: 10</p>
 </blockquote>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<h2 id="analysis"><a class="markdownIt-Anchor" href="#analysis"></a> Analysis</h2>
 <p>因为只出现一次的元素下标x的左右两边均有偶数个元素，那么数组的长度一定为奇数。又因数组是有序的，那么相同的元素必然是相连的。<br />
 当索引为x的元素，如果其左边的元素的索引满足 <code>nums[y] = nums[y+1]</code> y必定为偶数；相对地，如果其右边元素的索引满足 <code>nums[y] = nums[y+1]</code> y必定为奇数。<br />
 我们可以得出数组中存在奇偶分界条件，则可以使用二分搜索来找到改分界点，便是目标元素。搜索的左右边界分别为0为数组最大索引，即[0, N],N为数组长度减一。<br />

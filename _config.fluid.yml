@@ -546,7 +546,7 @@ post:
       enable: true
       # 显示的文本，{}是数字的占位符（必须包含)，下同
       # Displayed text, {} is a placeholder for numbers (must be included), the same below
-      format: "{} words"
+      format: "{} characters"
 
     # 估计阅读全文需要的时长
     # Estimate the time required to read the full text
