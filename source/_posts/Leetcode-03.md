@@ -6,37 +6,32 @@ tags: Algorithms
 banner_img: /img/bg/Leetcode-03/20191121.jpg
 ---
 
-## 无重复字符的最长子串（Longest Substring Without Repeating Characters）
+## Longest Substring Without Repeating Characters
 
-## 目录
+### Description
 
-### 描述
+Given a string s, find the length of the longest substring without repeating characters.
 
-给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+#### Example  1:
 
-### 示例
+> Input: "abcabcbb"  
+> Output: 3  
+> Explanation: The answer is "abc", with the length of 3.
 
-#### 示例  1:
+#### Example 2:
 
-> 输入: "abcabcbb"  
-> 输出: 3  
-> 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+> Input: "bbbbb"  
+> Output: 1  
+> Explanation: The answer is "b", with the length of 1.
 
-#### 示例 2:
+#### Example 3:
 
-> 输入: "bbbbb"  
-> 输出: 1  
-> 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+> Input: "pwwkew"  
+> Output: 3  
+> Explanation: The answer is "wke", with the length of 3.  
+> Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-#### 示例 3:
-
-> 输入: "pwwkew"  
-> 输出: 3  
-> 解释: 因为无重复字符的最长子串是  "wke"，所以其长度为 3。
-
-请注意，你的答案必须是 子串 的长度，"pwke"  是一个子序列，不是子串。
-
-### 思路
+### Analysis
 
 我们可以维护一个范围[i, j)的窗口来保存子串，使用 HashSet/HashMap 作为容器，对 s 进行遍历。如果窗口中不包含有 s[j]，则将 s[j]添加到窗口中并计数，反之，将 s[i]从窗口中移除。也可以使用一个 int 数组来代替 HashSet。
 
@@ -49,8 +44,9 @@ banner_img: /img/bg/Leetcode-03/20191121.jpg
 时间复杂度为 O(n)，遍历一次 s，n 为 s 的长度；  
 空间复杂度为 O(min(m,n))，需要额外的 HashSet，取决于 s 的长度 n 和窗口长度 m。
 
-### 代码
+### Solution
 
+#### C#
 ```csharp
 class Solution
 {
@@ -100,7 +96,7 @@ class Solution
 }
 ```
 
-C++代码
+#### C++
 
 ```cpp
 class Solution {
@@ -120,7 +116,7 @@ public:
 }
 ```
 
-Python 代码
+#### Python
 
 ```python
 class Solution:
@@ -135,7 +131,7 @@ class Solution:
         return ans
 ```
 
-Typescript 代码
+#### Typescript
 
 ```typescript
 function lengthOfLongestSubstring(s: string): number {
