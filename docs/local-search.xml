@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Rust-04 Vec</title>
+    <link href="/2022/08/07/Rust-04%20Vec/"/>
+    <url>/2022/08/07/Rust-04%20Vec/</url>
+    
+    <content type="html"><![CDATA[<h2 id="vec"><a class="markdownIt-Anchor" href="#vec"></a> Vec</h2><p>Vec is a contiguous growable array type.</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Vec</span>&lt;T, A = Global&gt;<br><span class="hljs-keyword">where</span><br>  A: Allocator,<br>  &#123; ... &#125;<br></code></pre></td></tr></table></figure><h2 id="examples"><a class="markdownIt-Anchor" href="#examples"></a> Examples</h2><p>We can declare a mutable/immutable Vec by <code>Vec::new()</code></p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">mut_vec</span> = Vec::<span class="hljs-title function_ invoke__">new</span>();<br><span class="hljs-keyword">let</span> <span class="hljs-variable">vec</span> = Vec::<span class="hljs-title function_ invoke__">new</span>();<br></code></pre></td></tr></table></figure><p>We can also declare a vec by <code>vec!</code> macro</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">mut_vec</span> = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br><span class="hljs-keyword">let</span> <span class="hljs-variable">vec</span> = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br></code></pre></td></tr></table></figure><h2 id="macro-vec"><a class="markdownIt-Anchor" href="#macro-vec"></a> Macro vec!</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-built_in">macro_rules!</span> vec &#123;<br>    () =&gt; &#123; ... &#125;;<br>    ($elem:expr; $n:expr) =&gt; &#123; ... &#125;;<br>    ($($x:expr),+ $(,)?) =&gt; &#123; ... &#125;;<br>&#125;<br></code></pre></td></tr></table></figure><p>There are two forms of this macro <code>vec!</code></p><ul><li>Create a Vec containing a given list of elements:</li></ul><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">let</span> <span class="hljs-variable">v</span> = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br><span class="hljs-built_in">assert_eq!</span>(v[<span class="hljs-number">0</span>], <span class="hljs-number">1</span>);<br><span class="hljs-built_in">assert_eq!</span>(v[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>);<br><span class="hljs-built_in">assert_eq!</span>(v[<span class="hljs-number">2</span>], <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure><ul><li>Create a Vec from a given element and size:</li></ul><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">let</span> <span class="hljs-variable">v</span> = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>; <span class="hljs-number">3</span>];<br><span class="hljs-built_in">assert_eq!</span>(v, [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tutorial</category>
+      
+      <category>Rust</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Programming Language</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Leetcode-540 Single Element in a Sorted Array</title>
     <link href="/2022/02/14/Leetcode-540/"/>
     <url>/2022/02/14/Leetcode-540/</url>
