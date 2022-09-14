@@ -15,8 +15,52 @@ tags: Algorithms
 
 ### C#
 
+```csharp
+
+```
+
 ### Typescript
+
+```typescript
+
+```
 
 ### Python
 
+```py
+
+```
+
 ### C++
+
+```cpp
+
+```
+
+### Java
+
+```java
+
+```
+
+### C
+
+```c
+
+```
+
+### Rust
+
+```rust
+
+```
+
+### Go
+
+```go
+
+```
+
+## References
+
+[LeetCode](https://leetcode.com)
