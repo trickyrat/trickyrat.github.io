@@ -1,9 +1,9 @@
 ---
-title: Leetcode-20 	Valid Parentheses
+title: LeetCode-20 	Valid Parentheses
 date: 2020-04-09 08:58:43
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-20/forest.jpg
+banner_img: /img/bg/LeetCode-20/forest.jpg
 ---
 
 ## 题目描述

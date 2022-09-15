@@ -1,9 +1,9 @@
 ---
-title: Leetcode-03 Longest Substring Without Repeating Characters
+title: LeetCode-03 Longest Substring Without Repeating Characters
 date: 2019-11-22 14:53:11
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-03/20191121.jpg
+banner_img: /img/bg/LeetCode-03/20191121.jpg
 ---
 
 ## Longest Substring Without Repeating Characters

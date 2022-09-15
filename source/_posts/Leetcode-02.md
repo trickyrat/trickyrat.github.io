@@ -1,9 +1,9 @@
 ---
-title: Leetcode-02 Add Two Numbers
+title: LeetCode-02 Add Two Numbers
 date: 2019-11-21 23:22:16
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-02/20191117.jpg
+banner_img: /img/bg/LeetCode-02/20191117.jpg
 ---
 
 ## 两数相加（Add Two Numbers）

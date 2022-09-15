@@ -1,5 +1,5 @@
 ---
-title: Leetcode-540 Single Element in a Sorted Array
+title: LeetCode-540 Single Element in a Sorted Array
 date: 2022-02-14 20:52:33
 categories:  [Algorithms, LeetCode]
 tags: Algorithms

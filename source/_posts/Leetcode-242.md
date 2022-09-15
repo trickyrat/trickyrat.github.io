@@ -1,9 +1,9 @@
 ---
-title: Leetcode-242 Valid Anagram
+title: LeetCode-242 Valid Anagram
 date: 2020-04-09 12:52:50
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-242/landscape.jpg
+banner_img: /img/bg/LeetCode-242/landscape.jpg
 ---
 
 ## 题目描述

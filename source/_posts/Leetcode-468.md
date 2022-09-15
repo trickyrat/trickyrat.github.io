@@ -1,9 +1,9 @@
 ---
-title: Leetcode-468 Valid IP Address
+title: LeetCode-468 Valid IP Address
 date: 2020-08-11 00:25:14
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-468/sunset.jpg
+banner_img: /img/bg/LeetCode-468/sunset.jpg
 ---
 
 ## 验证 IP 地址（Valid IP Address）

@@ -1,9 +1,9 @@
 ---
-title: Leetcode-25 Reverse Nodes in k-Group
+title: LeetCode-25 Reverse Nodes in k-Group
 date: 2020-04-09 13:34:52
 categories: [Algorithms, LeetCode]
 tags: Algorithms
-banner_img: /img/bg/Leetcode-25/the-road.jpg
+banner_img: /img/bg/LeetCode-25/the-road.jpg
 ---
 
 ## 题目描述
