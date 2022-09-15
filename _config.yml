@@ -113,13 +113,13 @@ theme: fluid
 
 katex: true
 
-markdown_it_plus:
-  render:
-    highlight: true
-    html: true
-    xhtmlOut: true
-    breaks: true
-    linkify: true
+# markdown_it_plus:
+#   render:
+#     highlight: true
+#     html: true
+#     xhtmlOut: true
+#     breaks: true
+#     linkify: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
