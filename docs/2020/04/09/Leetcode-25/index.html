@@ -16,22 +16,22 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目描述 给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。 k  是一个正整数，它的值小于或等于链表的长度。 如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。  示例  给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5 当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5 当  k &#x3D; 3 时，应当返回:">
+    <meta name="description" content="题目描述给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。k  是一个正整数，它的值小于或等于链表的长度。如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。 示例 给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5当  k &#x3D; 3 时，应当返">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-25 Reverse Nodes in k-Group">
-<meta property="og:url" content="https://trickyrat.github.io/2020/04/09/Leetcode-25/index.html">
+<meta property="og:title" content="LeetCode-25 Reverse Nodes in k-Group">
+<meta property="og:url" content="https://trickyrat.github.io/2020/04/09/LeetCode-25/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="题目描述 给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。 k  是一个正整数，它的值小于或等于链表的长度。 如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。  示例  给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5 当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5 当  k &#x3D; 3 时，应当返回:">
+<meta property="og:description" content="题目描述给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。k  是一个正整数，它的值小于或等于链表的长度。如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。 示例 给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5当  k &#x3D; 3 时，应当返">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-09T05:34:52.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.241Z">
+<meta property="article:modified_time" content="2022-09-15T19:07:21.028Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Leetcode-25 Reverse Nodes in k-Group - Meow</title>
+  <title>LeetCode-25 Reverse Nodes in k-Group - Meow</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -69,7 +69,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz","app_key":"Ec9djGTOMtnuxsIavrcIqQgr","server_url":"https://i3ui6xdt.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz","app_key":"Ec9djGTOMtnuxsIavrcIqQgr","server_url":"https://i3ui6xdt.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -99,7 +99,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -219,13 +219,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bg/Leetcode-25/the-road.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/bg/LeetCode-25/the-road.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Leetcode-25 Reverse Nodes in k-Group"></span>
+            <span id="subtitle" data-typed-text="LeetCode-25 Reverse Nodes in k-Group"></span>
           
         </div>
 
@@ -312,12 +312,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Leetcode-25 Reverse Nodes in k-Group</h1>
+            <h1 style="display: none">LeetCode-25 Reverse Nodes in k-Group</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on 2 months ago
+                    Last updated on an hour ago
                   
                 
               </p>
@@ -325,32 +325,22 @@
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
-<p>给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。<br />
-k  是一个正整数，它的值小于或等于链表的长度。<br />
-如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-<h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
-<blockquote>
-<p>给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5<br />
-当  k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5<br />
-当  k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</p>
+                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个链表，每  k  个节点一组进行翻转，请你返回翻转后的链表。<br>k  是一个正整数，它的值小于或等于链表的长度。<br>如果节点总数不是  k  的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><blockquote>
+<p>给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5<br>当  k &#x3D; 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5<br>当  k &#x3D; 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</p>
 </blockquote>
-<h2 id="说明"><a class="markdownIt-Anchor" href="#说明"></a> 说明</h2>
-<ul>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
 <li>你的算法只能使用常数的额外空间。</li>
 <li>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</li>
 </ul>
-<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
-<p>这道题可以拆分为两个步骤，首先将链表根据 k 拆分成若干组，然后每一组开始反转链表。<br />
-分组很简单，比如，链表为<code>[1, 2, 3, 4, 5], k = 2</code><br />
-先拆分成<code>[1, 2]</code> 和 <code>[3, 4, 5]</code>，<br />
-然后递归去拆分<code>[3, 4, 5]</code>，最终得到<code>[1, 2], [3, 4], [5]</code> 三组数据。其实会发现每拆分一组时，就可以进行链表的反转，然后将反转后的链表在与之前的组合并便能得到结果。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题可以拆分为两个步骤，首先将链表根据 k 拆分成若干组，然后每一组开始反转链表。<br>分组很简单，比如，链表为<code>[1, 2, 3, 4, 5], k = 2</code><br>先拆分成<code>[1, 2]</code> 和 <code>[3, 4, 5]</code>，<br>然后递归去拆分<code>[3, 4, 5]</code>，最终得到<code>[1, 2], [3, 4], [5]</code> 三组数据。其实会发现每拆分一组时，就可以进行链表的反转，然后将反转后的链表在与之前的组合并便能得到结果。</p>
 <p>反转链表的代码模板</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs csharp">ListNode prev = <span class="hljs-literal">null</span>;<br>ListNode curr = head;<br><span class="hljs-keyword">while</span>(curr != <span class="hljs-literal">null</span>)<br>&#123;<br>    ListNode next = curr.next;<br>    curr.next = prev;<br>    prev = curr;<br>    curr = next;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>这里的 prev 节点便是我们递归一次返回处理好的链表结点。时间复杂度为 O(n)，空间复杂度为 O(1)。</p>
-<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
-<p>C# 代码</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>C# 代码</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">ReverseKGroup</span>(<span class="hljs-params">ListNode head, <span class="hljs-built_in">int</span> k</span>)</span><br>&#123;<br>    ListNode tmp = head;<br>    <span class="hljs-built_in">int</span> count = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (count &lt; k) <span class="hljs-comment">// 分组</span><br>    &#123;<br>        <span class="hljs-keyword">if</span>(tmp == <span class="hljs-literal">null</span>)<br>            <span class="hljs-keyword">return</span> head;<br>        tmp = tmp.next;<br>        count++;<br>    &#125;<br>    ListNode prev = ReverseKGroup(tmp, k);<br>    <span class="hljs-keyword">while</span> (count-- &gt; <span class="hljs-number">0</span>) <span class="hljs-comment">// 反转链表</span><br>    &#123;<br>        ListNode next = head.next;<br>        head.next = prev;<br>        prev = head;<br>        head = next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> prev;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>C++ 代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">reverseKGroup</span><span class="hljs-params">(ListNode* head, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(head == <span class="hljs-literal">nullptr</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>        &#125;<br>        ListNode *tmp = head;<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(count &lt; k) &#123;<br>            <span class="hljs-keyword">if</span>(!tmp) &#123;<br>                <span class="hljs-keyword">return</span> head;<br>            &#125;<br>            tmp = tmp-&gt;next;<br>            count++;<br>        &#125;<br>        ListNode *prev = <span class="hljs-built_in">reverseKGroup</span>(tmp, k);<br>        <span class="hljs-keyword">while</span>(count-- &gt; <span class="hljs-number">0</span>) &#123;<br>            ListNode* next = head-&gt;next;<br>            head-&gt;next = prev;<br>            prev = head;<br>            head = next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> prev;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
@@ -405,8 +395,8 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Leetcode-25 Reverse Nodes in k-Group</div>
-      <div>https://trickyrat.github.io/2020/04/09/Leetcode-25/</div>
+      <div>LeetCode-25 Reverse Nodes in k-Group</div>
+      <div>https://trickyrat.github.io/2020/04/09/LeetCode-25/</div>
     </div>
     <div class="license-meta">
       
@@ -422,21 +412,23 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
         </div>
       
       
-      <div class="license-meta-item">
-        <div>Licensed under</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
             
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -448,9 +440,9 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/11/Leetcode-468/" title="Leetcode-468 Valid IP Address">
+                      <a href="/2020/08/11/LeetCode-468/" title="LeetCode-468 Valid IP Address">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Leetcode-468 Valid IP Address</span>
+                        <span class="hidden-mobile">LeetCode-468 Valid IP Address</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -458,8 +450,8 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/04/09/Leetcode-242/" title="Leetcode-242 Valid Anagram">
-                        <span class="hidden-mobile">Leetcode-242 Valid Anagram</span>
+                      <a href="/2020/04/09/LeetCode-242/" title="LeetCode-242 Valid Anagram">
+                        <span class="hidden-mobile">LeetCode-242 Valid Anagram</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -675,22 +667,34 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -719,6 +723,21 @@ k  是一个正整数，它的值小于或等于链表的长度。<br />
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 
