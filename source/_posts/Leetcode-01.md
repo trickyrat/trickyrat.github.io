@@ -36,7 +36,7 @@ You can return the answer in any order.
 
 ## Analysis
 
-We can solve it by two for loop and this solution will take O(n^2) time complexity and O(1) space complexity. Fortunately, we can use a hash table to save the pair that target-nums[i] as key and i as value and find the key if exists in in nums. This soluion will take O(n) time complexity but O(n) space complexity.
+We can solve it by two for loop and this solution will take O(n^2) time complexity and O(1) space complexity. Fortunately, we can use a hash table to save the pair that target-nums[i] as key and i as value and find the key if exists in in nums. This solution will take O(n) time complexity but O(n) space complexity.
 
 ## Solution
 
