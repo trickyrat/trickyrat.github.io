@@ -409,7 +409,7 @@ footer:
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: true
+    enable: false
 
     # 统计数据来源，使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
@@ -692,7 +692,7 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: true
+    enable: false
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
@@ -758,8 +758,8 @@ gitalk:
 # Based on LeanCloud
 # See: https://valine.js.org/
 valine:
-  appId: I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz
-  appKey: Ec9djGTOMtnuxsIavrcIqQgr
+  appId: 
+  appKey: 
   placeholder: Comment here...
   path: window.location.pathname
   avatar: retro
@@ -768,7 +768,7 @@ valine:
   lang: en
   highlight: true
   recordIP: false
-  serverURLs: 'https://i3ui6xdt.lc-cn-n1-shared.com'
+  serverURLs: ''
   emojiCDN:
   emojiMaps:
   enableQQ: false
