@@ -8,3 +8,6 @@ date: 2022-09-28 00:45:04
 ---
 
 ## String chars
+
+
+## String as_bytes()
