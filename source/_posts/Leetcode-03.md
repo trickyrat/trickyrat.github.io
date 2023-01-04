@@ -6,32 +6,32 @@ tags: Algorithms
 banner_img: /img/bg/LeetCode-03/20191121.jpg
 ---
 
-## Longest Substring Without Repeating Characters
-
-### Description
+## Description
 
 Given a string s, find the length of the longest substring without repeating characters.
 
-#### Example  1:
+## Examples
+
+### Example  1:
 
 > Input: "abcabcbb"  
 > Output: 3  
 > Explanation: The answer is "abc", with the length of 3.
 
-#### Example 2:
+### Example 2:
 
 > Input: "bbbbb"  
 > Output: 1  
 > Explanation: The answer is "b", with the length of 1.
 
-#### Example 3:
+### Example 3:
 
 > Input: "pwwkew"  
 > Output: 3  
 > Explanation: The answer is "wke", with the length of 3.  
 > Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-### Analysis
+## Analysis
 
 我们可以维护一个范围[i, j)的窗口来保存子串，使用 HashSet/HashMap 作为容器，对 s 进行遍历。如果窗口中不包含有 s[j]，则将 s[j]添加到窗口中并计数，反之，将 s[i]从窗口中移除。也可以使用一个 int 数组来代替 HashSet。
 
@@ -44,9 +44,9 @@ Given a string s, find the length of the longest substring without repeating cha
 时间复杂度为 O(n)，遍历一次 s，n 为 s 的长度；  
 空间复杂度为 O(min(m,n))，需要额外的 HashSet，取决于 s 的长度 n 和窗口长度 m。
 
-### Solution
+## Solution
 
-#### C#
+### C#
 ```csharp
 class Solution
 {
@@ -96,7 +96,7 @@ class Solution
 }
 ```
 
-#### C++
+### C++
 
 ```cpp
 class Solution {
@@ -116,7 +116,7 @@ public:
 }
 ```
 
-#### Python
+### Python
 
 ```python
 class Solution:
@@ -131,7 +131,28 @@ class Solution:
         return ans
 ```
 
-#### Typescript
+### Rust
+
+```rust
+pub fn length_of_longest_substring(s: String) -> i32 {
+    let (mut n, mut res) = (s.len(), 0);
+    let mut map = HashMap::<u8, i32>::new();
+    let mut i = 0;
+    let chars = s.as_bytes();
+    for j in 0..n {
+        if map.contains_key(&chars[j]) {
+            i = max(*map.get(&chars[j]).unwrap(), i);
+            map.entry(chars[j]).and_modify(|e| *e = j as i32 + 1);
+        } else {
+            map.insert(chars[j], (j + 1) as i32);
+        }
+        res = max(res, j as i32 - i + 1);
+    }
+    res
+}
+```
+
+### Typescript
 
 ```typescript
 function lengthOfLongestSubstring(s: string): number {

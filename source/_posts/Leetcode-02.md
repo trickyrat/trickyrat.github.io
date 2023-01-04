@@ -6,8 +6,6 @@ tags: Algorithms
 banner_img: /img/bg/LeetCode-02/20191117.jpg
 ---
 
-## 两数相加（Add Two Numbers）
-
 ### 描述
 
 给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
@@ -41,7 +39,7 @@ banner_img: /img/bg/LeetCode-02/20191117.jpg
 
 ### 代码
 
-C#代码
+#### C#
 
 ```csharp
 class Solution
@@ -73,7 +71,7 @@ class Solution
 }
 ```
 
-C++代码
+#### C++
 
 ```cpp
 class Solution {
@@ -94,7 +92,7 @@ public:
 };
 ```
 
-Python 代码
+#### Python
 
 ```python
 class Solution:
@@ -119,7 +117,30 @@ class Solution:
         return dummy_head.next
 ```
 
-Typescript 代码
+#### Rust
+
+```rust
+impl Solution {
+    pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        carried(l1, l2, 0)
+    }
+}
+fn carried(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>, mut carry: i32) -> Option<Box<ListNode>> {
+  if l1.is_none() && l2.is_none() && carry == 0 {
+    None
+  } else {
+    Some(Box::new(ListNode {
+      next: carried(l1.and_then(|x| {carry += x.val; x.next}),
+                    l2.and_then(|x| {carry += x.val; x.next}),
+                    carry / 10
+      ),
+      val: carry % 10
+    }))
+  }
+}
+```
+
+#### Typescript
 
 ```typescript
 function addTwoNumbers(
@@ -151,6 +172,60 @@ function addTwoNumbers(
 }
 ```
 
-## 引用
+#### Javascript
 
-截图来自[Leetcode-cn](https://leetcode-cn.com/add-two-numbers).
+```javascript
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function(l1, l2) {
+    let dummyHead = new ListNode(0);
+    let carry = 0;
+    let curr = dummyHead;
+    while (l1 || l2 || carry > 0) {
+        let num1 = l1 ? l1.val : 0;
+        let num2 = l2 ? l2.val : 0;
+        let sum = num1 + num2 + carry;
+        curr.next = new ListNode(sum % 10);
+        curr = curr.next;
+        carry = Math.floor(sum / 10);
+        l1 = l1 ? l1.next : l1;
+        l2 = l2 ? l2.next : l2;
+    }
+    if (carry != 0) curr.next = new ListNode(carry);
+    return dummyHead.next;
+};
+```
+
+#### Java
+
+```java
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        if (l1 == null && l2 == null)
+            return head;
+        int sum = 0, carry = 0;
+        ListNode curr = head;
+        while (l1 != null || l2 != null) {
+            int num1 = l1 == null ? 0 : l1.val;
+            int num2 = l2 == null ? 0 : l2.val;
+            sum = num1 + num2 + carry;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            carry = sum / 10;
+            l1 = l1 == null ? l1 : l1.next;
+            l2 = l2 == null ? l2 : l2.next;
+        }
+        if (carry != 0)
+            curr.next = new ListNode(carry);
+        return head.next;
+    }
+}
+```
+
+### 引用
+
+截图来自[LeetCode](https://leetcode.cn/problems/add-two-numbers).

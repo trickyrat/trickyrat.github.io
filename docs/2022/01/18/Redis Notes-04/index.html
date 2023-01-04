@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用Redis中的GeoHash数据结构实现附近的酒店类似功能">
+    <meta name="description" content="GeoHash CommandsGEOADDSyntax GEOADD key [NX | XX] [CH] longitude latitude member [longitude latitude member …]    Adds the specified geospatial items (longitude, latitude, name) to the specified key.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis Notes-04">
 <meta property="og:url" content="https://trickyrat.github.io/2022/01/18/Redis%20Notes-04/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="使用Redis中的GeoHash数据结构实现附近的酒店类似功能">
+<meta property="og:description" content="GeoHash CommandsGEOADDSyntax GEOADD key [NX | XX] [CH] longitude latitude member [longitude latitude member …]    Adds the specified geospatial items (longitude, latitude, name) to the specified key.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-17T17:08:20.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.242Z">
+<meta property="article:modified_time" content="2022-10-28T18:54:47.790Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Notes">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +254,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          31 characters
+          2.9k characters
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
           <!-- compatible with older versions-->
-          1 minutes
+          10 minutes
         
       </span>
     
@@ -317,7 +317,7 @@
               <p class="note note-info">
                 
                   
-                    Last updated on 4 months ago
+                    Last updated on 2 months ago
                   
                 
               </p>
@@ -325,7 +325,42 @@
             
               <div class="markdown-body">
                 
-                <h2 id="使用redis中的geohash数据结构实现附近的酒店类似功能"><a class="markdownIt-Anchor" href="#使用redis中的geohash数据结构实现附近的酒店类似功能"></a> 使用Redis中的GeoHash数据结构实现附近的酒店类似功能</h2>
+                <h2 id="GeoHash-Commands"><a href="#GeoHash-Commands" class="headerlink" title="GeoHash Commands"></a>GeoHash Commands</h2><h3 id="GEOADD"><a href="#GEOADD" class="headerlink" title="GEOADD"></a>GEOADD</h3><h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><blockquote>
+<p>GEOADD key [NX | XX] [CH] longitude latitude member [longitude latitude member …]  </p>
+</blockquote>
+<p>Adds the specified geospatial items (longitude, latitude, name) to the specified key. Data is stored into the key as a sorted set, in a way that makes it possible to query the items with the GEOSEARCH command.  </p>
+<h4 id="GEOADD-options"><a href="#GEOADD-options" class="headerlink" title="GEOADD options"></a>GEOADD options</h4><ul>
+<li><strong>XX</strong>: Only update elements that already exist. Never add elements.</li>
+<li><strong>NX</strong>: Don’t update already existing elements. Always add new elements.</li>
+<li><strong>CH</strong>: Modify the return value from the number of new elements added, to the total number of elements changed (<code>CH</code> is an abbreviation of changed). Changed elements are new elements added and elements already existing for which the coordinates was updated. So elements specified in the command line having the same score as they had in the past are not counted. Note: normally, the return value of <code>GEOADD</code> only counts the number of new elements added.</li>
+</ul>
+<h4 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h4><p>Integer reply, specifically:</p>
+<ul>
+<li>When used without optional arguments, the number of elements added to the sorted set (excluding score updates).</li>
+<li>If the <code>CH</code> option is specified, the number of elements that were changed (added or updated).</li>
+</ul>
+<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">127.0.0.1:6379&gt; GEOADD Sicily 13.361389 38.115556 &quot;Palermo&quot; 15.087269 37.502669 &quot;Catania&quot;<br>(integer) 2<br></code></pre></td></tr></table></figure>
+
+<h3 id="GEOHASH"><a href="#GEOHASH" class="headerlink" title="GEOHASH"></a>GEOHASH</h3><h4 id="Syntax-1"><a href="#Syntax-1" class="headerlink" title="Syntax"></a>Syntax</h4><blockquote>
+<p>GEOHASH key member [member …]</p>
+</blockquote>
+<p>Return valid <code>Geohash</code> strings representing the position of one or more elements in a sorted set value representing a geospatial index (where elements were added using <code>GEOADD</code>).  </p>
+<h4 id="Return-1"><a href="#Return-1" class="headerlink" title="Return"></a>Return</h4><p>Array reply, specifically:</p>
+<p>The command returns an array where each element is the <code>Geohash</code> corresponding to each member name passed as argument to the command.</p>
+<h4 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">127.0.0.1:6379&gt; GEOADD Sicily 13.361389 38.115556 &quot;Palermo&quot; 15.087269 37.502669 &quot;Catania&quot;<br>(integer) 2<br>127.0.0.1:6379&gt; GEOHASH Sicily Palermo Catania<br>1) &quot;sqc8b49rny0&quot;<br>2) &quot;sqdtr74hyu0&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="GEOPOS"><a href="#GEOPOS" class="headerlink" title="GEOPOS"></a>GEOPOS</h3><h4 id="Syntax-2"><a href="#Syntax-2" class="headerlink" title="Syntax"></a>Syntax</h4><blockquote>
+<p>GEOPOS key member [member …]</p>
+</blockquote>
+<p>Return the positions (longitude,latitude) of all the specified members of the geospatial index represented by the sorted set at key.</p>
+<p>Given a sorted set representing a geospatial index, populated using the <code>GEOADD</code> command, it is often useful to obtain back the coordinates of specified members. When the geospatial index is populated via <code>GEOADD</code> the coordinates are converted into a 52 bit geohash, so the coordinates returned may not be exactly the ones used in order to add the elements, but small errors may be introduced.</p>
+<p>The command can accept a variable number of arguments so it always returns an array of positions even when a single element is specified.  </p>
+<h4 id="Return-2"><a href="#Return-2" class="headerlink" title="Return"></a>Return</h4><p>Array reply, specifically:</p>
+<p>The command returns an array where each element is a two elements array representing longitude and latitude (x,y) of each member name passed as argument to the command.</p>
+<p>Non existing elements are reported as NULL elements of the array.</p>
+<h4 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">127.0.0.1:6379&gt; GEOADD Sicily 13.361389 38.115556 &quot;Palermo&quot; 15.087269 37.502669 &quot;Catania&quot;<br>(integer) 2<br>127.0.0.1:6379&gt; GEOPOS Sicily Palermo Catania NonExisting<br>1) 1) &quot;13.36138933897018433&quot;<br>   2) &quot;38.11555639549629859&quot;<br>2) 1) &quot;15.08726745843887329&quot;<br>   2) &quot;37.50266842333162032&quot;<br>3) (nil)<br></code></pre></td></tr></table></figure>
+
+<h3 id="GEODIST"><a href="#GEODIST" class="headerlink" title="GEODIST"></a>GEODIST</h3><h3 id="GEORADIUS"><a href="#GEORADIUS" class="headerlink" title="GEORADIUS"></a>GEORADIUS</h3><h3 id="GEORADIUS-RO"><a href="#GEORADIUS-RO" class="headerlink" title="GEORADIUS_RO"></a>GEORADIUS_RO</h3><h3 id="GEORADIUSBYMEMBER"><a href="#GEORADIUSBYMEMBER" class="headerlink" title="GEORADIUSBYMEMBER"></a>GEORADIUSBYMEMBER</h3><h3 id="GEORADIUSBYMEMBER-RO"><a href="#GEORADIUSBYMEMBER-RO" class="headerlink" title="GEORADIUSBYMEMBER_RO"></a>GEORADIUSBYMEMBER_RO</h3><h3 id="GEOSEARCH"><a href="#GEOSEARCH" class="headerlink" title="GEOSEARCH"></a>GEOSEARCH</h3><h3 id="GEOSEARCHSTORE"><a href="#GEOSEARCHSTORE" class="headerlink" title="GEOSEARCHSTORE"></a>GEOSEARCHSTORE</h3><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://redis.io/commands">Redis Commands</a></p>
 
                 
               </div>

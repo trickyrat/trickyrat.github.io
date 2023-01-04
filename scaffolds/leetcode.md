@@ -5,62 +5,65 @@ categories: [Algorithms, LeetCode]
 tags: Algorithms
 ---
 
-## Description
+### Description
 
-## Examples
+### Examples
 
-## Analysis
+### Analysis
 
-## Solution
+### Solution
 
-### C#
+#### C#
 
 ```csharp
+public class Solution
+{
 
+}
 ```
 
-### Typescript
+#### Typescript
 
 ```typescript
 
 ```
 
-### Python
+#### Python
 
 ```py
 
 ```
 
-### C++
+#### C++
 
 ```cpp
 
 ```
 
-### Java
+#### Java
 
 ```java
 
 ```
 
-### C
+#### C
 
 ```c
 
 ```
 
-### Rust
+#### Rust
 
 ```rust
 
 ```
 
-### Go
+#### Go
 
 ```go
 
 ```
 
-## References
+### References
 
-[LeetCode](https://leetcode.com)
+[LeetCode](https://leetcode.cn)
