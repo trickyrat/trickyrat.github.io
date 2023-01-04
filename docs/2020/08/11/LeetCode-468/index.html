@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="trickyrat">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="验证 IP 地址（Valid IP Address）题目描述编写一个函数来验证输入的字符串是否是有效的 IPv4 或  IPv6 地址。 IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制数，其范围为  0 - 255，  用(&quot;.&quot;)分割。比如，172.16.254.1； 同时，IPv4 地址内的数不会以 0 开头。比如，地址  172.16.254.01 是不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-468 Valid IP Address">
+<meta property="og:url" content="https://trickyrat.github.io/2020/08/11/LeetCode-468/index.html">
+<meta property="og:site_name" content="Meow">
+<meta property="og:description" content="验证 IP 地址（Valid IP Address）题目描述编写一个函数来验证输入的字符串是否是有效的 IPv4 或  IPv6 地址。 IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制数，其范围为  0 - 255，  用(&quot;.&quot;)分割。比如，172.16.254.1； 同时，IPv4 地址内的数不会以 0 开头。比如，地址  172.16.254.01 是不">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-10T16:25:14.000Z">
+<meta property="article:modified_time" content="2022-09-15T19:08:07.259Z">
+<meta property="article:author" content="trickyrat">
+<meta property="article:tag" content="Algorithms">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>LeetCode-468 Valid IP Address - Meow</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"trickyrat.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"I3uI6xdTHXxanTMi0daLUpDb-gzGzoHsz","app_key":"Ec9djGTOMtnuxsIavrcIqQgr","server_url":"https://i3ui6xdt.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Meow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/LeetCode-468/sunset.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LeetCode-468 Valid IP Address"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        trickyrat
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-08-11 00:25" pubdate>
+          August 11, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          4k characters
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          14 minutes
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LeetCode-468 Valid IP Address</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    Last updated on 4 months ago
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="验证-IP-地址（Valid-IP-Address）"><a href="#验证-IP-地址（Valid-IP-Address）" class="headerlink" title="验证 IP 地址（Valid IP Address）"></a>验证 IP 地址（Valid IP Address）</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>编写一个函数来验证输入的字符串是否是有效的 IPv4 或  IPv6 地址。</p>
+<p>IPv4  地址由十进制数和点来表示，每个地址包含 4 个十进制数，其范围为  0 - 255，  用<code>(&quot;.&quot;)</code>分割。比如，<code>172.16.254.1</code>；</p>
+<p>同时，IPv4 地址内的数不会以 <code>0</code> 开头。比如，地址  <code>172.16.254.01</code> 是不合法的。</p>
+<p>IPv6  地址由 8 组 16 进制的数字来表示，每组表示  16 比特。这些组数字通过 <code>(&quot;:&quot;)</code>分割。<br>比如,  <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code> 是一个有效的地址。而且，我们可以加入一些以 0 开头的数字，字母可以使用大写，也可以是小写。所以， <code>2001:db8:85a3:0:0:8A2E:0370:7334 </code>也是一个有效的 IPv6 address 地址 (即，忽略 0 开头，忽略大小写)。</p>
+<p>然而，我们不能因为某个组的值为 <code>0</code>，而使用一个空的组，以至于出现 <code>(::)</code> 的情况。  比如， <code>2001:0db8:85a3::8A2E:0370:7334</code> 是无效的 IPv6 地址。</p>
+<p>同时，在 IPv6 地址中，多余的 <code>0</code> 也是不被允许的。比如， <code>02001:0db8:85a3:0000:0000:8a2e:0370:7334</code> 是无效的。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h4><blockquote>
+<p>输入: “172.16.254.1”<br>输出: “IPv4”<br>解释: 这是一个有效的 IPv4 地址, 所以返回 “IPv4”。</p>
+</blockquote>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h4><blockquote>
+<p>输入: “2001:0db8:85a3:0:0:8A2E:0370:7334”<br>输出: “IPv6”<br>解释: 这是一个有效的 IPv6 地址, 所以返回 “IPv6”。</p>
+</blockquote>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3"></a>示例 3</h4><blockquote>
+<p>输入: “256.256.256.256”<br>输出: “Neither”<br>解释: 这个地址既不是 IPv4 也不是 IPv6 地址。</p>
+</blockquote>
+<h3 id="分析过程："><a href="#分析过程：" class="headerlink" title="分析过程："></a>分析过程：</h3><p>看到题目，首先想到就是正则表达式，无论是 IPv4 还是 IPv6 其实都是分组后每一组的规则是相同的按照相应的规则进行匹配。<br>对于 IPv4 来说，其结构为<code>A.B.C.D</code>，由三个<code>.</code>和四个<code>0-255</code>数字组成，因此存在五种情景</p>
+<table>
+<thead>
+<tr>
+<th align="center">情景</th>
+<th align="center">说明</th>
+<th align="center">范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">一位，首位可以为 0</td>
+<td align="center">0-9</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">两位，首位不能为 0</td>
+<td align="center">10-99</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td align="center">三位，首位不能为 0</td>
+<td align="center">100-199</td>
+</tr>
+<tr>
+<td align="center">200</td>
+<td align="center">三位 2 开头</td>
+<td align="center">200-249</td>
+</tr>
+<tr>
+<td align="center">250</td>
+<td align="center">三位 25 开头</td>
+<td align="center">250-255</td>
+</tr>
+</tbody></table>
+<p>这样一来正则表达式就很简单了，对于前三组为<code>([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5].)&#123;3&#125;</code>，第四组就少一个<code>.</code>即可。</p>
+<p>同理，对于 IPv6 来说，结构为<code>A:B:C:D:E:F:G:H</code>，由七组<code>:</code>和八组 16 进制数组成，也没有限制首位不能为 0，所以 IPv6 的正则表达式为<code>(([0-9a-fA-F]&#123;1,4&#125;):)</code>，第八组少一个<code>:</code>。</p>
+<p>C# 代码</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ValidIPAddress</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> IP</span>)</span><br>    &#123;<br>        <span class="hljs-built_in">string</span> ipv4_chunk = <span class="hljs-string">&quot;([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])&quot;</span>;<br>        Regex ipv4Pattern = <span class="hljs-keyword">new</span> Regex(<span class="hljs-string">&quot;^(&quot;</span> + ipv4_chunk + <span class="hljs-string">&quot;.)&#123;3&#125;&quot;</span> + ipv4_chunk + <span class="hljs-string">&quot;$&quot;</span>);<br>        <span class="hljs-built_in">string</span> ipv6_chunk = <span class="hljs-string">&quot;([0-9a-fA-F]&#123;1,4&#125;)&quot;</span>;<br>        Regex ipv6Pattern = <span class="hljs-keyword">new</span> Regex(<span class="hljs-string">@&quot;^(&quot;</span> + ipv6_chunk + <span class="hljs-string">&quot;:)&#123;7&#125;&quot;</span> + ipv6_chunk + <span class="hljs-string">&quot;$&quot;</span>);<br>        <span class="hljs-keyword">if</span>(IP.Contains(<span class="hljs-string">&#x27;.&#x27;</span>))<br>        &#123;<br>            <span class="hljs-keyword">return</span> ipv4Pattern.IsMatch(IP) ? <span class="hljs-string">&quot;IPv4&quot;</span> : <span class="hljs-string">&quot;Neither&quot;</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(IP.Contains(<span class="hljs-string">&#x27;:&#x27;</span>))<br>        &#123;<br>            <span class="hljs-keyword">return</span> ipv6Pattern.IsMatch(IP) ? <span class="hljs-string">&quot;IPv6&quot;</span> : <span class="hljs-string">&quot;Neither&quot;</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>试一下，能跑，但是耗时 140ms,打败 1%的用户，emmmmmm….</p>
+<p>换一个思路，其实验证每个组的逻辑是相同，我们完全可以不使用正则表达式去匹配，而是每一组去验证即可。</p>
+<p>C# 代码</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ValidIPAddress</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> IP</span>)</span><br>    &#123;<br><br>        <span class="hljs-keyword">if</span> (IP.Count(c =&gt; c == <span class="hljs-string">&#x27;.&#x27;</span>) == <span class="hljs-number">3</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> ValidIPv4(IP);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(IP.Count(c =&gt; c == <span class="hljs-string">&#x27;:&#x27;</span>) == <span class="hljs-number">7</span>)<br>        &#123;<br>            <span class="hljs-keyword">return</span> ValidIPv6(IP);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ValidIPv4</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> IP</span>)</span><br>    &#123;<br>        <span class="hljs-built_in">string</span>[] chunks = IP.Split(<span class="hljs-string">&#x27;.&#x27;</span>);<br>        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> chunk <span class="hljs-keyword">in</span> chunks)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(chunk.Length == <span class="hljs-number">0</span> || chunk.Length &gt; <span class="hljs-number">3</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (chunk[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; chunk.Length != <span class="hljs-number">1</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>            &#125;<br>            <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> c <span class="hljs-keyword">in</span> chunk)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">char</span>.IsNumber(c))<br>                &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(System.Convert.ToInt32(chunk) &gt; <span class="hljs-number">255</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;IPv4&quot;</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-built_in">string</span> <span class="hljs-title">ValidIPv6</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> IP</span>)</span><br>    &#123;<br>        <span class="hljs-built_in">string</span>[] chunks = IP.Split(<span class="hljs-string">&#x27;:&#x27;</span>);<br>        <span class="hljs-built_in">string</span> hexDigits = <span class="hljs-string">&quot;0123456789abcdefABCDEF&quot;</span>;<br>        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> chunk <span class="hljs-keyword">in</span> chunks)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (chunk.Length == <span class="hljs-number">0</span> || chunk.Length &gt; <span class="hljs-number">4</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>            &#125;<br>            <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> c <span class="hljs-keyword">in</span> chunk)<br>            &#123;<br>                <span class="hljs-keyword">if</span>(hexDigits.IndexOf(c) == <span class="hljs-number">-1</span>)<br>                &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span>;<br>                &#125;<br>            &#125;<br><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;IPv6&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>嗯，104ms，提升不少。</p>
+<p>Python 代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_valid_ip_address</span>(<span class="hljs-params">self, IP: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">valid_ipv4</span>(<span class="hljs-params">IP: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>        chunks = IP.split(<span class="hljs-string">&#x27;.&#x27;</span>)<br>        <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> chunks:<br>            length = <span class="hljs-built_in">len</span>(chunk)<br>            <span class="hljs-keyword">if</span> length == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> length &gt; <span class="hljs-number">3</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>            <span class="hljs-keyword">if</span> chunk[<span class="hljs-number">0</span>] == <span class="hljs-string">&#x27;0&#x27;</span> <span class="hljs-keyword">and</span> length != <span class="hljs-number">1</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> chunk.isnumeric():<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(chunk) &gt; <span class="hljs-number">255</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;IPv4&quot;</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">valid_ipv6</span>(<span class="hljs-params">IP: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>        chunks = IP.split(<span class="hljs-string">&#x27;:&#x27;</span>)<br>        hex_digits = <span class="hljs-string">&quot;0123456789abcdefABCDEF&quot;</span><br>        <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> chunks:<br>            length = <span class="hljs-built_in">len</span>(chunk)<br>            <span class="hljs-keyword">if</span> length == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> length &gt; <span class="hljs-number">4</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>            <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> chunk:<br>                <span class="hljs-keyword">if</span> hex_digits.find(c) == -<span class="hljs-number">1</span>:<br>                    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;IPv6&quot;</span><br><br>    <span class="hljs-keyword">if</span> IP.count(<span class="hljs-string">&quot;.&quot;</span>) == <span class="hljs-number">3</span>:<br>        <span class="hljs-keyword">return</span> valid_ipv4(IP)<br>    <span class="hljs-keyword">elif</span> IP.count(<span class="hljs-string">&quot;:&quot;</span>) == <span class="hljs-number">7</span>:<br>        <span class="hljs-keyword">return</span> valid_ipv6(IP)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Neither&quot;</span><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Algorithms/" class="category-chain-item">Algorithms</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Algorithms/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Algorithms/">#Algorithms</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LeetCode-468 Valid IP Address</div>
+      <div>https://trickyrat.github.io/2020/08/11/LeetCode-468/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>trickyrat</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 11, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/19/Redis%20Notes-01/" title="Redis Notes-01">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Redis Notes-01</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/09/LeetCode-25/" title="LeetCode-25 Reverse Nodes in k-Group">
+                        <span class="hidden-mobile">LeetCode-25 Reverse Nodes in k-Group</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
