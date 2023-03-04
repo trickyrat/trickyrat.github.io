@@ -1,5 +1,5 @@
 ---
-title: Rust-04 Vec
+title: Rust-05 Vec
 categories:
   - Tutorial
   - Rust

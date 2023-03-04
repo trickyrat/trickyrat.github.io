@@ -1,5 +1,5 @@
 ---
-title: Rust-05 String
+title: Rust-06 String
 categories:
   - Tutorial
   - Rust

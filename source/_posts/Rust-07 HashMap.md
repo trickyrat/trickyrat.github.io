@@ -1,5 +1,5 @@
 ---
-title: Rust-06 HashMap
+title: Rust-07 HashMap
 categories:
   - Tutorial
   - Rust
