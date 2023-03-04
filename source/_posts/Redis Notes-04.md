@@ -93,6 +93,10 @@ Non existing elements are reported as NULL elements of the array.
 
 ### GEODIST
 
+Calculate the distance between two points
+
+> GEODIST Key 
+
 ### GEORADIUS
 
 ### GEORADIUS_RO
