@@ -3,4 +3,4 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-pmpm-lock.yaml
+pnpm-lock.yaml
