@@ -22,7 +22,7 @@ banner_img: /img/bg/LeetCode-02/20191117.jpg
 ### 分析
 
 其实和我们算加法一样，从个位开始计算就行了,如图所示  
-![figure1](/img/bg/Leetcode-02/figure1.png)
+![figure1](/img/bg/LeetCode-02/figure1.png)
 只要把两条链表相应位置相加，记录是否有进位(通过 sum/10 来判断)，有则进位，添加到一条新的链表结点就行了。值得注意的是，相加后有几种情景，分别是
 
 |  情景  |    结果    |

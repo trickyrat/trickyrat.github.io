@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二分搜索（bsearch） C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数    参数名 说明">
+    <meta name="description" content="二分搜索（bsearch）C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数   参数名 说明    k">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C-05 Control Flow">
 <meta property="og:url" content="https://trickyrat.github.io/2020/10/12/C-05%20Control%20Flow/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="二分搜索（bsearch） C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数    参数名 说明">
+<meta property="og:description" content="二分搜索（bsearch）C 标准库实现了二分搜索的函数 bsearch 123void *bsearch(const void *key, const void *ptr,              size_t count, size_t size,              int (*comp)(const void *, const void *));  参数   参数名 说明    k">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-12T06:45:03.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.240Z">
+<meta property="article:modified_time" content="2022-06-29T14:57:35.585Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Programming Language">
 <meta name="twitter:card" content="summary_large_image">
@@ -251,7 +251,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          2.5k characters
+          2.6k characters
         
       </span>
     
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,103 +321,91 @@
             
               <div class="markdown-body">
                 
-                <h2 id="二分搜索bsearch"><a class="markdownIt-Anchor" href="#二分搜索bsearch"></a> 二分搜索（bsearch）</h2>
-<p>C 标准库实现了二分搜索的函数 bsearch</p>
+                <h2 id="二分搜索（bsearch）"><a href="#二分搜索（bsearch）" class="headerlink" title="二分搜索（bsearch）"></a>二分搜索（bsearch）</h2><p>C 标准库实现了二分搜索的函数 bsearch</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> *<span class="hljs-title function_">bsearch</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *key, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *ptr,</span><br><span class="hljs-params">              <span class="hljs-type">size_t</span> count, <span class="hljs-type">size_t</span> size,</span><br><span class="hljs-params">              <span class="hljs-type">int</span> (*comp)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="参数"><a class="markdownIt-Anchor" href="#参数"></a> 参数</h3>
-<table>
+
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">参数名</th>
-<th style="text-align:center">说明</th>
+<th align="center">参数名</th>
+<th align="center">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">key</td>
-<td style="text-align:center">指向要查找的元素的指针</td>
+<tbody><tr>
+<td align="center">key</td>
+<td align="center">指向要查找的元素的指针</td>
 </tr>
 <tr>
-<td style="text-align:center">ptr</td>
-<td style="text-align:center">指向要检验的数组的指针</td>
+<td align="center">ptr</td>
+<td align="center">指向要检验的数组的指针</td>
 </tr>
 <tr>
-<td style="text-align:center">count</td>
-<td style="text-align:center">数组的元素数目</td>
+<td align="center">count</td>
+<td align="center">数组的元素数目</td>
 </tr>
 <tr>
-<td style="text-align:center">size</td>
-<td style="text-align:center">数组每个元素的字节数</td>
+<td align="center">size</td>
+<td align="center">数组每个元素的字节数</td>
 </tr>
 <tr>
-<td style="text-align:center">comp</td>
-<td style="text-align:center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
+<td align="center">comp</td>
+<td align="center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
 </tr>
-</tbody>
-</table>
-<h3 id="返回值"><a class="markdownIt-Anchor" href="#返回值"></a> 返回值</h3>
-<table>
+</tbody></table>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">返回值</th>
-<th style="text-align:center">说明</th>
+<th align="center">返回值</th>
+<th align="center">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">null pointer</td>
-<td style="text-align:center">在给定的数组中没有找到该元素</td>
+<tbody><tr>
+<td align="center">null pointer</td>
+<td align="center">在给定的数组中没有找到该元素</td>
 </tr>
 <tr>
-<td style="text-align:center">指向与*key 比较相等的指针</td>
-<td style="text-align:center">在给定的数组中找到该元素</td>
+<td align="center">指向与*key 比较相等的指针</td>
+<td align="center">在给定的数组中找到该元素</td>
 </tr>
-</tbody>
-</table>
-<h3 id="二分搜索示例"><a class="markdownIt-Anchor" href="#二分搜索示例"></a> 二分搜索示例</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-comment">// 定义带有可以比较元素的结构体</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">data</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">int</span> nr;<br>    <span class="hljs-type">char</span> <span class="hljs-type">const</span> *value;<br>&#125; Data;<br><span class="hljs-comment">// 定义比较函数</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">data_cmp</span><span class="hljs-params">(<span class="hljs-type">void</span> <span class="hljs-type">const</span> *lhs, <span class="hljs-type">void</span> <span class="hljs-type">const</span> *rhs)</span><br>&#123;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> l = lhs;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> r = rhs;<br>    <span class="hljs-keyword">return</span> (l-&gt;nr &gt; r-&gt;nr) - (l-&gt;nr &lt; r-&gt;nr);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    Data pairs[] = &#123;<br>        &#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Foo&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Bar&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Hello&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">4</span>, <span class="hljs-string">&quot;World&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">5</span>, <span class="hljs-string">&quot;Jacky&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">6</span>, <span class="hljs-string">&quot;John&quot;</span>&#125;&#125;;<br><br>    Data key = &#123;.nr = <span class="hljs-number">3</span>&#125;;<br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;中的bsearch函数，进行二分搜索查找元素</span><br>    Data <span class="hljs-type">const</span> *res = bsearch(&amp;key, pairs, <span class="hljs-keyword">sizeof</span> pairs / <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>],<br>                              <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>], data_cmp);<br>    <span class="hljs-keyword">if</span> (res)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d: %s\n&quot;</span>, res-&gt;nr, res-&gt;value);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d not found\n&quot;</span>, key.nr);<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+</tbody></table>
+<h3 id="二分搜索示例"><a href="#二分搜索示例" class="headerlink" title="二分搜索示例"></a>二分搜索示例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-comment">// 定义带有可以比较元素的结构体</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">data</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">int</span> nr;<br>    <span class="hljs-type">char</span> <span class="hljs-type">const</span> *value;<br>&#125; Data;<br><span class="hljs-comment">// 定义比较函数</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">data_cmp</span><span class="hljs-params">(<span class="hljs-type">void</span> <span class="hljs-type">const</span> *lhs, <span class="hljs-type">void</span> <span class="hljs-type">const</span> *rhs)</span><br>&#123;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> l = lhs;<br>    Data <span class="hljs-type">const</span> *<span class="hljs-type">const</span> r = rhs;<br>    <span class="hljs-keyword">return</span> (l-&gt;nr &gt; r-&gt;nr) - (l-&gt;nr &lt; r-&gt;nr);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    Data pairs[] = &#123;<br>        &#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Foo&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Bar&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Hello&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">4</span>, <span class="hljs-string">&quot;World&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">5</span>, <span class="hljs-string">&quot;Jacky&quot;</span>&#125;,<br>        &#123;<span class="hljs-number">6</span>, <span class="hljs-string">&quot;John&quot;</span>&#125;&#125;;<br><br>    Data key = &#123;.nr = <span class="hljs-number">3</span>&#125;;<br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;中的bsearch函数，进行二分搜索查找元素</span><br>    Data <span class="hljs-type">const</span> *res = bsearch(&amp;key, pairs, <span class="hljs-keyword">sizeof</span> pairs / <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>],<br>                              <span class="hljs-keyword">sizeof</span> pairs[<span class="hljs-number">0</span>], data_cmp);<br>    <span class="hljs-keyword">if</span> (res)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d: %s\n&quot;</span>, res-&gt;nr, res-&gt;value);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;NO %d not found\n&quot;</span>, key.nr);<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>编译后执行结果：</p>
 <blockquote>
-<p>clang main.c -std=c11 -Wall -o main.out &amp;&amp; ./main.out<br />
-NO 3: Hello</p>
+<p>clang main.c -std&#x3D;c11 -Wall -o main.out &amp;&amp; .&#x2F;main.out<br>NO 3: Hello</p>
 </blockquote>
-<h2 id="快速排序qsort"><a class="markdownIt-Anchor" href="#快速排序qsort"></a> 快速排序（qsort）</h2>
-<p>C 标准库实现了快速排序的函数 qsort</p>
+<h2 id="快速排序（qsort）"><a href="#快速排序（qsort）" class="headerlink" title="快速排序（qsort）"></a>快速排序（qsort）</h2><p>C 标准库实现了快速排序的函数 qsort</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">qsort</span><span class="hljs-params">(<span class="hljs-type">void</span> *ptr, <span class="hljs-type">size_t</span> count, <span class="hljs-type">size_t</span> size,</span><br><span class="hljs-params">           <span class="hljs-type">int</span> (*comp)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>;<br></code></pre></td></tr></table></figure>
-<h3 id="参数-2"><a class="markdownIt-Anchor" href="#参数-2"></a> 参数</h3>
-<table>
+
+<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">参数名</th>
-<th style="text-align:center">说明</th>
+<th align="center">参数名</th>
+<th align="center">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">ptr</td>
-<td style="text-align:center">指向待排序的数组的指针</td>
+<tbody><tr>
+<td align="center">ptr</td>
+<td align="center">指向待排序的数组的指针</td>
 </tr>
 <tr>
-<td style="text-align:center">count</td>
-<td style="text-align:center">数组的元素数目</td>
+<td align="center">count</td>
+<td align="center">数组的元素数目</td>
 </tr>
 <tr>
-<td style="text-align:center">size</td>
-<td style="text-align:center">数组每个元素的字节数</td>
+<td align="center">size</td>
+<td align="center">数组每个元素的字节数</td>
 </tr>
 <tr>
-<td style="text-align:center">comp</td>
-<td style="text-align:center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
+<td align="center">comp</td>
+<td align="center">比较函数，升序返回负数，降序返回正数，相等返回零，函数签名形式 <code>int cmp(const void *a, const void *b)</code></td>
 </tr>
-</tbody>
-</table>
-<h3 id="快速排序示例"><a class="markdownIt-Anchor" href="#快速排序示例"></a> 快速排序示例</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;limits.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">compare_ints</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *a, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *b)</span><br>&#123;<br>    <span class="hljs-type">int</span> arg1 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)a;<br>    <span class="hljs-type">int</span> arg2 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)b;<br>    <span class="hljs-keyword">return</span> (arg1 &gt; arg2) - (arg1 &lt; arg2);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    <span class="hljs-type">int</span> ints[] = &#123; <span class="hljs-number">-2</span>,<br>                   <span class="hljs-number">99</span>,<br>                   INT_MAX,<br>                   <span class="hljs-number">0</span>,<br>                   <span class="hljs-number">-743</span>,<br>                   <span class="hljs-number">10</span>,<br>                   <span class="hljs-number">2</span>,<br>                   <span class="hljs-number">44</span>,<br>                   INT_MIN,<br>                   <span class="hljs-number">2</span> &#125;;<br><br>    <span class="hljs-type">int</span> size = <span class="hljs-keyword">sizeof</span> ints / <span class="hljs-keyword">sizeof</span> *ints;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Unordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;的快排算法，对数组进行排序</span><br>    qsort(ints, size, <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>), compare_ints);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Ordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+</tbody></table>
+<h3 id="快速排序示例"><a href="#快速排序示例" class="headerlink" title="快速排序示例"></a>快速排序示例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;limits.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">compare_ints</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *a, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *b)</span><br>&#123;<br>    <span class="hljs-type">int</span> arg1 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)a;<br>    <span class="hljs-type">int</span> arg2 = *(<span class="hljs-type">const</span> <span class="hljs-type">int</span> *)b;<br>    <span class="hljs-keyword">return</span> (arg1 &gt; arg2) - (arg1 &lt; arg2);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 准备数据</span><br>    <span class="hljs-type">int</span> ints[] = &#123; <span class="hljs-number">-2</span>,<br>                   <span class="hljs-number">99</span>,<br>                   INT_MAX,<br>                   <span class="hljs-number">0</span>,<br>                   <span class="hljs-number">-743</span>,<br>                   <span class="hljs-number">10</span>,<br>                   <span class="hljs-number">2</span>,<br>                   <span class="hljs-number">44</span>,<br>                   INT_MIN,<br>                   <span class="hljs-number">2</span> &#125;;<br><br>    <span class="hljs-type">int</span> size = <span class="hljs-keyword">sizeof</span> ints / <span class="hljs-keyword">sizeof</span> *ints;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Unordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 调用&lt;stdlib.h&gt;的快排算法，对数组进行排序</span><br>    qsort(ints, size, <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>), compare_ints);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Ordered: &quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(i == size - <span class="hljs-number">1</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ints[i]);<br>        &#125;<br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, ints[i]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> EXIT_SUCCESS;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>编译后执行结果：</p>
 <blockquote>
-<p>clang main.c -std=c11 -Wall -o main.out &amp;&amp; ./main.out<br />
-Unordered: -2 99 2147483647 0 -743 10 2 44 -2147483648 2<br />
-Ordered: -2147483648 -743 -2 0 2 2 10 44 99 2147483647</p>
+<p>clang main.c -std&#x3D;c11 -Wall -o main.out &amp;&amp; .&#x2F;main.out<br>Unordered: -2 99 2147483647 0 -743 10 2 44 -2147483648 2<br>Ordered: -2147483648 -743 -2 0 2 2 10 44 99 2147483647</p>
 </blockquote>
 
                 

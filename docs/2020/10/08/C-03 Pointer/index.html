@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="指针（Pointer） 指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类  指针的指针（Pointer to pointer） 1i">
+    <meta name="description" content="指针（Pointer）指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类指针的指针（Pointer to pointer）1int **">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C-03 Pointer">
 <meta property="og:url" content="https://trickyrat.github.io/2020/10/08/C-03%20Pointer/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="指针（Pointer） 指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类  指针的指针（Pointer to pointer） 1i">
+<meta property="og:description" content="指针（Pointer）指针可谓是 C 语言的灵魂也是难点， 指针也是一个内置类型 从右向左，可以清晰分辨指针 123int *ptr;  &#x2F;&#x2F; 声明一个指向int类型的指针变量ptrint i &#x3D; 0; &#x2F;&#x2F; 声明一个int类型的变量i并赋值0ptr &#x3D; &amp;i;  &#x2F;&#x2F; 将i的内存地址（非物理内存地址）赋值给ptr  指针分类指针的指针（Pointer to pointer）1int **">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-08T05:27:37.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.239Z">
+<meta property="article:modified_time" content="2022-06-29T14:54:15.898Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Programming Language">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,16 +321,14 @@
             
               <div class="markdown-body">
                 
-                <h1 id="指针pointer"><a class="markdownIt-Anchor" href="#指针pointer"></a> 指针（Pointer）</h1>
-<p>指针可谓是 C 语言的灵魂也是难点，</p>
+                <h1 id="指针（Pointer）"><a href="#指针（Pointer）" class="headerlink" title="指针（Pointer）"></a>指针（Pointer）</h1><p>指针可谓是 C 语言的灵魂也是难点，</p>
 <p>指针也是一个内置类型</p>
 <p>从右向左，可以清晰分辨指针</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> *ptr;  <span class="hljs-comment">// 声明一个指向int类型的指针变量ptr</span><br><span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// 声明一个int类型的变量i并赋值0</span><br>ptr = &amp;i;  <span class="hljs-comment">// 将i的内存地址（非物理内存地址）赋值给ptr</span><br></code></pre></td></tr></table></figure>
-<h2 id="指针分类"><a class="markdownIt-Anchor" href="#指针分类"></a> 指针分类</h2>
-<h3 id="指针的指针pointer-to-pointer"><a class="markdownIt-Anchor" href="#指针的指针pointer-to-pointer"></a> 指针的指针（Pointer to pointer）</h3>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> **pp; <span class="hljs-comment">// 声明一个指向int*类型的指针变量pp</span><br></code></pre></td></tr></table></figure>
-<h3 id="函数指针function-pointer"><a class="markdownIt-Anchor" href="#函数指针function-pointer"></a> 函数指针（Function Pointer）</h3>
-<blockquote>
+
+<h2 id="指针分类"><a href="#指针分类" class="headerlink" title="指针分类"></a>指针分类</h2><h3 id="指针的指针（Pointer-to-pointer）"><a href="#指针的指针（Pointer-to-pointer）" class="headerlink" title="指针的指针（Pointer to pointer）"></a>指针的指针（Pointer to pointer）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> **pp; <span class="hljs-comment">// 声明一个指向int*类型的指针变量pp</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="函数指针（Function-Pointer）"><a href="#函数指针（Function-Pointer）" class="headerlink" title="函数指针（Function Pointer）"></a>函数指针（Function Pointer）</h3><blockquote>
 <p>return_type (*pointer_name)(param_type1, param_type2,…);</p>
 </blockquote>
 

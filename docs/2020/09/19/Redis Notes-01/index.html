@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Redis 命令  创建和获取 key    命令 说明 例子     set 创建一个名为 key 值为 value 键值对 set views 10   get 获取名为 key 的值，存在返回值，不存在返回 nil get views   mset 一次创建多个键值对 mset key1 1 key2 2   mget 一次获取多个键的值 mget key1 key2    1234567">
+    <meta name="description" content="Redis 命令创建和获取 key   命令 说明 例子    set 创建一个名为 key 值为 value 键值对 set views 10   get 获取名为 key 的值，存在返回值，不存在返回 nil get views   mset 一次创建多个键值对 mset key1 1 key2 2   mget 一次获取多个键的值 mget key1 key2   12345678910lo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis Notes-01">
 <meta property="og:url" content="https://trickyrat.github.io/2020/09/19/Redis%20Notes-01/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="Redis 命令  创建和获取 key    命令 说明 例子     set 创建一个名为 key 值为 value 键值对 set views 10   get 获取名为 key 的值，存在返回值，不存在返回 nil get views   mset 一次创建多个键值对 mset key1 1 key2 2   mget 一次获取多个键的值 mget key1 key2    1234567">
+<meta property="og:description" content="Redis 命令创建和获取 key   命令 说明 例子    set 创建一个名为 key 值为 value 键值对 set views 10   get 获取名为 key 的值，存在返回值，不存在返回 nil get views   mset 一次创建多个键值对 mset key1 1 key2 2   mget 一次获取多个键的值 mget key1 key2   12345678910lo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-19T08:32:19.000Z">
-<meta property="article:modified_time" content="2022-08-07T09:18:10.934Z">
+<meta property="article:modified_time" content="2022-06-29T15:12:32.426Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Notes">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,175 +321,157 @@
             
               <div class="markdown-body">
                 
-                <h1 id="redis-命令"><a class="markdownIt-Anchor" href="#redis-命令"></a> Redis 命令</h1>
-<h2 id="创建和获取-key"><a class="markdownIt-Anchor" href="#创建和获取-key"></a> 创建和获取 key</h2>
-<table>
+                <h1 id="Redis-命令"><a href="#Redis-命令" class="headerlink" title="Redis 命令"></a>Redis 命令</h1><h2 id="创建和获取-key"><a href="#创建和获取-key" class="headerlink" title="创建和获取 key"></a>创建和获取 key</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">set</td>
-<td style="text-align:center">创建一个名为 key 值为 value 键值对</td>
-<td style="text-align:center">set views 10</td>
+<tbody><tr>
+<td align="center">set</td>
+<td align="center">创建一个名为 key 值为 value 键值对</td>
+<td align="center">set views 10</td>
 </tr>
 <tr>
-<td style="text-align:center">get</td>
-<td style="text-align:center">获取名为 key 的值，存在返回值，不存在返回 nil</td>
-<td style="text-align:center">get views</td>
+<td align="center">get</td>
+<td align="center">获取名为 key 的值，存在返回值，不存在返回 nil</td>
+<td align="center">get views</td>
 </tr>
 <tr>
-<td style="text-align:center">mset</td>
-<td style="text-align:center">一次创建多个键值对</td>
-<td style="text-align:center">mset key1 1 key2 2</td>
+<td align="center">mset</td>
+<td align="center">一次创建多个键值对</td>
+<td align="center">mset key1 1 key2 2</td>
 </tr>
 <tr>
-<td style="text-align:center">mget</td>
-<td style="text-align:center">一次获取多个键的值</td>
-<td style="text-align:center">mget key1 key2</td>
+<td align="center">mget</td>
+<td align="center">一次获取多个键的值</td>
+<td align="center">mget key1 key2</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;<span class="hljs-built_in">set</span> views 10<br><span class="hljs-string">&quot;OK&quot;</span><br>local_host:0&gt;get views<br><span class="hljs-string">&quot;10&quot;</span><br>local_host:0&gt;mset key1 1 key2 2 key3 3<br><span class="hljs-string">&quot;OK&quot;</span><br>local_host:0&gt;mget key1 key2 key3<br> 1)  <span class="hljs-string">&quot;1&quot;</span><br> 2)  <span class="hljs-string">&quot;2&quot;</span><br> 3)  <span class="hljs-string">&quot;3&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="自增自减"><a class="markdownIt-Anchor" href="#自增自减"></a> 自增自减</h2>
-<table>
+
+<h2 id="自增自减"><a href="#自增自减" class="headerlink" title="自增自减"></a>自增自减</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">incr</td>
-<td style="text-align:center">自增 key 的 value</td>
-<td style="text-align:center">incr views</td>
+<tbody><tr>
+<td align="center">incr</td>
+<td align="center">自增 key 的 value</td>
+<td align="center">incr views</td>
 </tr>
 <tr>
-<td style="text-align:center">decr</td>
-<td style="text-align:center">自减 key 的 value</td>
-<td style="text-align:center">decr views</td>
+<td align="center">decr</td>
+<td align="center">自减 key 的 value</td>
+<td align="center">decr views</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;incr views<br><span class="hljs-string">&quot;11&quot;</span><br>local_host:0&gt;decr views<br><span class="hljs-string">&quot;10&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="带步进自增自减"><a class="markdownIt-Anchor" href="#带步进自增自减"></a> 带步进自增自减</h2>
-<table>
+
+<h2 id="带步进自增自减"><a href="#带步进自增自减" class="headerlink" title="带步进自增自减"></a>带步进自增自减</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">incrby</td>
-<td style="text-align:center">有步进增加 key 的 value</td>
-<td style="text-align:center">incrby views 2</td>
+<tbody><tr>
+<td align="center">incrby</td>
+<td align="center">有步进增加 key 的 value</td>
+<td align="center">incrby views 2</td>
 </tr>
 <tr>
-<td style="text-align:center">decrby</td>
-<td style="text-align:center">有步进减少 key 的 value</td>
-<td style="text-align:center">decrby views 2</td>
+<td align="center">decrby</td>
+<td align="center">有步进减少 key 的 value</td>
+<td align="center">decrby views 2</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;incrby views 2<br><span class="hljs-string">&quot;12&quot;</span><br>local_host:0&gt;decrby views 2<br><span class="hljs-string">&quot;10&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="判断一个-key-是否存在"><a class="markdownIt-Anchor" href="#判断一个-key-是否存在"></a> 判断一个 key 是否存在</h2>
-<table>
+
+<h2 id="判断一个-key-是否存在"><a href="#判断一个-key-是否存在" class="headerlink" title="判断一个 key 是否存在"></a>判断一个 key 是否存在</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">exists</td>
-<td style="text-align:center">判断一个 key 是否存在</td>
-<td style="text-align:center">exists views</td>
+<tbody><tr>
+<td align="center">exists</td>
+<td align="center">判断一个 key 是否存在</td>
+<td align="center">exists views</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;exists views<br><span class="hljs-string">&quot;1&quot;</span><br>local_host:0&gt;exists key4<br><span class="hljs-string">&quot;0&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="设置-key-过期时间支持秒和毫秒"><a class="markdownIt-Anchor" href="#设置-key-过期时间支持秒和毫秒"></a> 设置 key 过期时间（支持秒和毫秒）</h2>
-<table>
+
+<h2 id="设置-key-过期时间（支持秒和毫秒）"><a href="#设置-key-过期时间（支持秒和毫秒）" class="headerlink" title="设置 key 过期时间（支持秒和毫秒）"></a>设置 key 过期时间（支持秒和毫秒）</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">expire</td>
-<td style="text-align:center">设置 key 过期时间</td>
-<td style="text-align:center">expire key2 5</td>
+<tbody><tr>
+<td align="center">expire</td>
+<td align="center">设置 key 过期时间</td>
+<td align="center">expire key2 5</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;expire key2 5<br><span class="hljs-string">&quot;1&quot;</span><br>local_host:0&gt;get key2<br><span class="hljs-string">&quot;2&quot;</span><br><span class="hljs-comment"># after 5 seconds</span><br>local_host:0&gt;get key2<br>null<br></code></pre></td></tr></table></figure>
-<h2 id="删除某个-key"><a class="markdownIt-Anchor" href="#删除某个-key"></a> 删除某个 key</h2>
-<table>
+
+<h2 id="删除某个-key"><a href="#删除某个-key" class="headerlink" title="删除某个 key"></a>删除某个 key</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">del</td>
-<td style="text-align:center">删除某个 key</td>
-<td style="text-align:center">del key3</td>
+<tbody><tr>
+<td align="center">del</td>
+<td align="center">删除某个 key</td>
+<td align="center">del key3</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;del key3<br><span class="hljs-string">&quot;1&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="查询-value-的类型"><a class="markdownIt-Anchor" href="#查询-value-的类型"></a> 查询 value 的类型</h2>
-<table>
+
+<h2 id="查询-value-的类型"><a href="#查询-value-的类型" class="headerlink" title="查询 value 的类型"></a>查询 value 的类型</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">查看 key 的存储的类型</td>
-<td style="text-align:center">type views</td>
+<tbody><tr>
+<td align="center">type</td>
+<td align="center">查看 key 的存储的类型</td>
+<td align="center">type views</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;<span class="hljs-built_in">type</span> views<br><span class="hljs-string">&quot;string&quot;</span><br></code></pre></td></tr></table></figure>
-<h2 id="模式匹配查询-key"><a class="markdownIt-Anchor" href="#模式匹配查询-key"></a> 模式匹配查询 key</h2>
-<table>
+
+<h2 id="模式匹配查询-key"><a href="#模式匹配查询-key" class="headerlink" title="模式匹配查询 key"></a>模式匹配查询 key</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">例子</th>
+<th align="center">命令</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">keys</td>
-<td style="text-align:center">根据模式匹配查询 key</td>
-<td style="text-align:center">keys *</td>
+<tbody><tr>
+<td align="center">keys</td>
+<td align="center">根据模式匹配查询 key</td>
+<td align="center">keys *</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">local_host:0&gt;keys *<br> 1)  <span class="hljs-string">&quot;key3&quot;</span><br> 2)  <span class="hljs-string">&quot;views&quot;</span><br> 3)  <span class="hljs-string">&quot;key2&quot;</span><br> 4)  <span class="hljs-string">&quot;key1&quot;</span><br></code></pre></td></tr></table></figure>
 
                 
@@ -598,7 +580,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/08/11/Leetcode-468/" title="LeetCode-468 Valid IP Address">
+                      <a href="/2020/08/11/LeetCode-468/" title="LeetCode-468 Valid IP Address">
                         <span class="hidden-mobile">LeetCode-468 Valid IP Address</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

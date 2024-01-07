@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Redis 事务 Redis 的命令是原子性的，而 Redis 的事务是非原子性的  MULTI 命令 开启事务命令，Redis将操作命令逐个放到队列中，根据EXEC命令来原子化执行命令  EXEC 命令 执行事务中的所有操作命令  DISCARD 命令 取消事务命令，放弃执行事务模块中的所有命令  WATCH 命令 监视一个 key 或者多个 key 如果在事务执行前，这些 key 被其他命令">
+    <meta name="description" content="Redis 事务Redis 的命令是原子性的，而 Redis 的事务是非原子性的 MULTI 命令开启事务命令，Redis将操作命令逐个放到队列中，根据EXEC命令来原子化执行命令 EXEC 命令执行事务中的所有操作命令 DISCARD 命令取消事务命令，放弃执行事务模块中的所有命令 WATCH 命令监视一个 key 或者多个 key 如果在事务执行前，这些 key 被其他命令修改，则事务被中断，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis Notes-03">
 <meta property="og:url" content="https://trickyrat.github.io/2021/12/01/Redis%20Notes-03/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="Redis 事务 Redis 的命令是原子性的，而 Redis 的事务是非原子性的  MULTI 命令 开启事务命令，Redis将操作命令逐个放到队列中，根据EXEC命令来原子化执行命令  EXEC 命令 执行事务中的所有操作命令  DISCARD 命令 取消事务命令，放弃执行事务模块中的所有命令  WATCH 命令 监视一个 key 或者多个 key 如果在事务执行前，这些 key 被其他命令">
+<meta property="og:description" content="Redis 事务Redis 的命令是原子性的，而 Redis 的事务是非原子性的 MULTI 命令开启事务命令，Redis将操作命令逐个放到队列中，根据EXEC命令来原子化执行命令 EXEC 命令执行事务中的所有操作命令 DISCARD 命令取消事务命令，放弃执行事务模块中的所有命令 WATCH 命令监视一个 key 或者多个 key 如果在事务执行前，这些 key 被其他命令修改，则事务被中断，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-01T07:58:48.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.242Z">
+<meta property="article:modified_time" content="2022-06-29T15:13:04.282Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Notes">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,32 +321,26 @@
             
               <div class="markdown-body">
                 
-                <h2 id="redis-事务"><a class="markdownIt-Anchor" href="#redis-事务"></a> Redis 事务</h2>
-<p><code>Redis</code> 的命令是原子性的，而 <code>Redis</code> 的事务是非原子性的</p>
-<h3 id="multi-命令"><a class="markdownIt-Anchor" href="#multi-命令"></a> MULTI 命令</h3>
-<p>开启事务命令，<code>Redis</code>将操作命令逐个放到队列中，根据<code>EXEC</code>命令来原子化执行命令</p>
-<h3 id="exec-命令"><a class="markdownIt-Anchor" href="#exec-命令"></a> EXEC 命令</h3>
-<p>执行事务中的所有操作命令</p>
-<h3 id="discard-命令"><a class="markdownIt-Anchor" href="#discard-命令"></a> DISCARD 命令</h3>
-<p>取消事务命令，放弃执行事务模块中的所有命令</p>
-<h3 id="watch-命令"><a class="markdownIt-Anchor" href="#watch-命令"></a> WATCH 命令</h3>
-<p>监视一个 <code>key</code> 或者多个 <code>key</code> 如果在事务执行前，这些 <code>key</code> 被其他命令修改，则事务被中断，不会执行事务中的任何命令</p>
-<h3 id="unwatch-命令"><a class="markdownIt-Anchor" href="#unwatch-命令"></a> UNWATCH 命令</h3>
-<p>取消 <code>WATCH</code> 命令对所有 <code>key</code> 的监控</p>
-<h3 id="事务流程"><a class="markdownIt-Anchor" href="#事务流程"></a> 事务流程</h3>
-<h4 id="正常事务流程"><a class="markdownIt-Anchor" href="#正常事务流程"></a> 正常事务流程</h4>
-<p>使用<code>MULTI</code> 命令开启一个事务，并且使用 <code>set</code> 命令新建两个字符串键 <code>key1</code> 和 <code>key2</code>，初始值分别为 <code>val1</code> 和 <code>val2</code></p>
+                <h2 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h2><p><code>Redis</code> 的命令是原子性的，而 <code>Redis</code> 的事务是非原子性的</p>
+<h3 id="MULTI-命令"><a href="#MULTI-命令" class="headerlink" title="MULTI 命令"></a>MULTI 命令</h3><p>开启事务命令，<code>Redis</code>将操作命令逐个放到队列中，根据<code>EXEC</code>命令来原子化执行命令</p>
+<h3 id="EXEC-命令"><a href="#EXEC-命令" class="headerlink" title="EXEC 命令"></a>EXEC 命令</h3><p>执行事务中的所有操作命令</p>
+<h3 id="DISCARD-命令"><a href="#DISCARD-命令" class="headerlink" title="DISCARD 命令"></a>DISCARD 命令</h3><p>取消事务命令，放弃执行事务模块中的所有命令</p>
+<h3 id="WATCH-命令"><a href="#WATCH-命令" class="headerlink" title="WATCH 命令"></a>WATCH 命令</h3><p>监视一个 <code>key</code> 或者多个 <code>key</code> 如果在事务执行前，这些 <code>key</code> 被其他命令修改，则事务被中断，不会执行事务中的任何命令</p>
+<h3 id="UNWATCH-命令"><a href="#UNWATCH-命令" class="headerlink" title="UNWATCH 命令"></a>UNWATCH 命令</h3><p>取消 <code>WATCH</code> 命令对所有 <code>key</code> 的监控</p>
+<h3 id="事务流程"><a href="#事务流程" class="headerlink" title="事务流程"></a>事务流程</h3><h4 id="正常事务流程"><a href="#正常事务流程" class="headerlink" title="正常事务流程"></a>正常事务流程</h4><p>使用<code>MULTI</code> 命令开启一个事务，并且使用 <code>set</code> 命令新建两个字符串键 <code>key1</code> 和 <code>key2</code>，初始值分别为 <code>val1</code> 和 <code>val2</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs redis">127.0.0.1:6379&gt; set key1 val1<br>OK<br>127.0.0.1:6379&gt; set key2 val2<br>OK<br></code></pre></td></tr></table></figure>
+
 <p>然后我们使用一个事务来修改两个 key 的值，命令为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs redis">127.0.0.1:6379&gt; MULTI<br>OK<br>127.0.0.1:6379&gt; set key1 new_val1<br>QUEUED<br>127.0.0.1:6379&gt; set key2 new_val2<br>QUEUED<br>127.0.0.1:6379&gt; EXEC<br>1) OK<br>2) OK<br></code></pre></td></tr></table></figure>
+
 <p>最后我们使用<code>get</code>命令来查询我们修改的键</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs redis">127.0.0.1:6379&gt; get key1<br>&quot;new_val1&quot;<br>127.0.0.1:6379&gt; get key2<br>&quot;new_val2&quot;<br>127.0.0.1:6379&gt;<br></code></pre></td></tr></table></figure>
+
 <p>可以看到外面已经修改了两个键的值</p>
-<h4 id="语法错误导致事务失败流程"><a class="markdownIt-Anchor" href="#语法错误导致事务失败流程"></a> 语法错误导致事务失败流程</h4>
-<p>在事务开启后，其中某一条命令因为 redis 语法错误导致整个事务提交失败，key 的值不会发生改变</p>
+<h4 id="语法错误导致事务失败流程"><a href="#语法错误导致事务失败流程" class="headerlink" title="语法错误导致事务失败流程"></a>语法错误导致事务失败流程</h4><p>在事务开启后，其中某一条命令因为 redis 语法错误导致整个事务提交失败，key 的值不会发生改变</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs redis">127.0.0.1:6379&gt; MULTI<br>OK<br>127.0.0.1:6379(TX)&gt; set key1 new_val1<br>QUEUED<br>127.0.0.1:6379(TX)&gt; sets key2 new_val2<br>(error) ERR unknown command `sets`, with args beginning with: `key2`, `new_val2`,<br>127.0.0.1:6379(TX)&gt; EXEC<br>(error) EXECABORT Transaction discarded because of previous errors.<br>127.0.0.1:6379&gt; get key1<br>&quot;val1&quot;<br>127.0.0.1:6379&gt; get key2<br>&quot;val2&quot;<br></code></pre></td></tr></table></figure>
-<h4 id="数据类型错误导致事务失败流程"><a class="markdownIt-Anchor" href="#数据类型错误导致事务失败流程"></a> 数据类型错误导致事务失败流程</h4>
-<p>在事务开启后，其中某一条命令因为 redis 数据类型错误导致整个事务提交失败，发生类型错误的命令的 key 的值不会发生改变，但是其他 key 会发生变化</p>
+
+<h4 id="数据类型错误导致事务失败流程"><a href="#数据类型错误导致事务失败流程" class="headerlink" title="数据类型错误导致事务失败流程"></a>数据类型错误导致事务失败流程</h4><p>在事务开启后，其中某一条命令因为 redis 数据类型错误导致整个事务提交失败，发生类型错误的命令的 key 的值不会发生改变，但是其他 key 会发生变化</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs redis">127.0.0.1:6379&gt; MULTI<br>OK<br>127.0.0.1:6379(TX)&gt; set key1 val1<br>QUEUED<br>127.0.0.1:6379(TX)&gt; lpush key2 val2<br>QUEUED<br>127.0.0.1:6379(TX)&gt; EXEC<br>1) OK<br>2) (error) WRONGTYPE Operation against a key holding the wrong kind of value<br>127.0.0.1:6379&gt; get key1<br>&quot;val1&quot;<br>127.0.0.1:6379&gt; get key2<br>&quot;new_val2&quot;<br>127.0.0.1:6379&gt;<br></code></pre></td></tr></table></figure>
 
                 
@@ -455,7 +449,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/26/Leetcode-33/" title="LeetCode-33 Search in Rotated Sorted Array">
+                      <a href="/2021/10/26/LeetCode-33/" title="LeetCode-33 Search in Rotated Sorted Array">
                         <span class="hidden-mobile">LeetCode-33 Search in Rotated Sorted Array</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

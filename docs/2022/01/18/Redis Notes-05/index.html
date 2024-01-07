@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Redis中的布隆过滤器（BloomFilter） Redis官方在4.0版本中提供了插件功能，此时可以将rebloom作为插件加载到Redis Server中，给Redis提供布隆去重功能。 123docker pull redislab&#x2F;rebloomdocker run -p 6739:6739 redislab&#x2F;rebloomredis-cli 1234567891011121314#">
+    <meta name="description" content="Redis中的布隆过滤器（BloomFilter）Redis官方在4.0版本中提供了插件功能，此时可以将rebloom作为插件加载到Redis Server中，给Redis提供布隆去重功能。 123docker pull redislab&#x2F;rebloomdocker run -p 6739:6739 redislab&#x2F;rebloomredis-cli  1234567891011121314# 插">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis Notes-05">
 <meta property="og:url" content="https://trickyrat.github.io/2022/01/18/Redis%20Notes-05/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="Redis中的布隆过滤器（BloomFilter） Redis官方在4.0版本中提供了插件功能，此时可以将rebloom作为插件加载到Redis Server中，给Redis提供布隆去重功能。 123docker pull redislab&#x2F;rebloomdocker run -p 6739:6739 redislab&#x2F;rebloomredis-cli 1234567891011121314#">
+<meta property="og:description" content="Redis中的布隆过滤器（BloomFilter）Redis官方在4.0版本中提供了插件功能，此时可以将rebloom作为插件加载到Redis Server中，给Redis提供布隆去重功能。 123docker pull redislab&#x2F;rebloomdocker run -p 6739:6739 redislab&#x2F;rebloomredis-cli  1234567891011121314# 插">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-17T17:47:14.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.242Z">
+<meta property="article:modified_time" content="2022-06-29T15:13:39.953Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Notes">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,9 +321,9 @@
             
               <div class="markdown-body">
                 
-                <h2 id="redis中的布隆过滤器bloomfilter"><a class="markdownIt-Anchor" href="#redis中的布隆过滤器bloomfilter"></a> Redis中的布隆过滤器（BloomFilter）</h2>
-<p><code>Redis</code>官方在<code>4.0</code>版本中提供了插件功能，此时可以将<code>rebloom</code>作为插件加载到Redis Server中，给Redis提供布隆去重功能。</p>
+                <h2 id="Redis中的布隆过滤器（BloomFilter）"><a href="#Redis中的布隆过滤器（BloomFilter）" class="headerlink" title="Redis中的布隆过滤器（BloomFilter）"></a>Redis中的布隆过滤器（BloomFilter）</h2><p><code>Redis</code>官方在<code>4.0</code>版本中提供了插件功能，此时可以将<code>rebloom</code>作为插件加载到Redis Server中，给Redis提供布隆去重功能。</p>
 <figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs docker">docker pull redislab/rebloom<br>docker <span class="hljs-keyword">run</span><span class="language-bash"> -p 6739:6739 redislab/rebloom</span><br>redis-cli<br></code></pre></td></tr></table></figure>
+
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-meta"># 插入</span><br>bf.add <span class="hljs-built_in">key</span> value<br><span class="hljs-meta"># 多个插入</span><br>bt.madd <span class="hljs-built_in">key</span> value1 value2 value3 ...<br><span class="hljs-meta"># 查询单个key是否存在</span><br>bf.exists <span class="hljs-built_in">key</span> value<br><span class="hljs-meta"># 查询多个key是否存在</span><br>bf.mexists <span class="hljs-built_in">key</span> value1 value2 ...<br><br><span class="hljs-meta"># 自定义参数过滤器</span><br>bf.reserve <span class="hljs-built_in">key</span> error_rate initial_size<br><br><span class="hljs-meta"># error_rate 容错率 默认值为0.01 越低需要的存储空间越大 </span><br><span class="hljs-meta"># initial_size 预计放入元素数量 默认值为100 当放入的实际元素数量超过该数量，会出现误判，超过数量越大，误判越严重 </span><br></code></pre></td></tr></table></figure>
                 
               </div>
@@ -421,7 +421,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/14/Leetcode-540/" title="LeetCode-540 Single Element in a Sorted Array">
+                      <a href="/2022/02/14/LeetCode-540/" title="LeetCode-540 Single Element in a Sorted Array">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">LeetCode-540 Single Element in a Sorted Array</span>
                         <span class="visible-mobile">上一篇</span>

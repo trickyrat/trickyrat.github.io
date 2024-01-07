@@ -16,15 +16,15 @@
   <meta name="author" content="trickyrat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Integer Number    长度 有符号 无符号     8-bit i8 u8   16-bit i16 u16   32-bit i32 u32   64-bit i64 u64   128-bit i128 u128   arch isize usize    最后的 isize 和 usize 会自动基于当前运行平台如果是 64 位系统就是 i64 和 u64，32 位系统则是">
+    <meta name="description" content="Integer Number   长度 有符号 无符号    8-bit i8 u8   16-bit i16 u16   32-bit i32 u32   64-bit i64 u64   128-bit i128 u128   arch isize usize   最后的 isize 和 usize 会自动基于当前运行平台如果是 64 位系统就是 i64 和 u64，32 位系统则是 i32">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rust-02 Data Types">
 <meta property="og:url" content="https://trickyrat.github.io/2020/10/23/Rust-02%20Data%20Types/index.html">
 <meta property="og:site_name" content="Meow">
-<meta property="og:description" content="Integer Number    长度 有符号 无符号     8-bit i8 u8   16-bit i16 u16   32-bit i32 u32   64-bit i64 u64   128-bit i128 u128   arch isize usize    最后的 isize 和 usize 会自动基于当前运行平台如果是 64 位系统就是 i64 和 u64，32 位系统则是">
+<meta property="og:description" content="Integer Number   长度 有符号 无符号    8-bit i8 u8   16-bit i16 u16   32-bit i32 u32   64-bit i64 u64   128-bit i128 u128   arch isize usize   最后的 isize 和 usize 会自动基于当前运行平台如果是 64 位系统就是 i64 和 u64，32 位系统则是 i32">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-23T05:59:34.000Z">
-<meta property="article:modified_time" content="2022-07-01T15:06:03.243Z">
+<meta property="article:modified_time" content="2022-06-29T14:51:52.904Z">
 <meta property="article:author" content="trickyrat">
 <meta property="article:tag" content="Programming Language">
 <meta name="twitter:card" content="summary_large_image">
@@ -313,7 +313,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 年前
+                    本文最后更新于：2 年前
                   
                 
               </p>
@@ -321,132 +321,123 @@
             
               <div class="markdown-body">
                 
-                <h2 id="integer-number"><a class="markdownIt-Anchor" href="#integer-number"></a> Integer Number</h2>
-<table>
+                <h2 id="Integer-Number"><a href="#Integer-Number" class="headerlink" title="Integer Number"></a>Integer Number</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">长度</th>
-<th style="text-align:left">有符号</th>
-<th style="text-align:left">无符号</th>
+<th align="left">长度</th>
+<th align="left">有符号</th>
+<th align="left">无符号</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">8-bit</td>
-<td style="text-align:left">i8</td>
-<td style="text-align:left">u8</td>
+<tbody><tr>
+<td align="left">8-bit</td>
+<td align="left">i8</td>
+<td align="left">u8</td>
 </tr>
 <tr>
-<td style="text-align:left">16-bit</td>
-<td style="text-align:left">i16</td>
-<td style="text-align:left">u16</td>
+<td align="left">16-bit</td>
+<td align="left">i16</td>
+<td align="left">u16</td>
 </tr>
 <tr>
-<td style="text-align:left">32-bit</td>
-<td style="text-align:left">i32</td>
-<td style="text-align:left">u32</td>
+<td align="left">32-bit</td>
+<td align="left">i32</td>
+<td align="left">u32</td>
 </tr>
 <tr>
-<td style="text-align:left">64-bit</td>
-<td style="text-align:left">i64</td>
-<td style="text-align:left">u64</td>
+<td align="left">64-bit</td>
+<td align="left">i64</td>
+<td align="left">u64</td>
 </tr>
 <tr>
-<td style="text-align:left">128-bit</td>
-<td style="text-align:left">i128</td>
-<td style="text-align:left">u128</td>
+<td align="left">128-bit</td>
+<td align="left">i128</td>
+<td align="left">u128</td>
 </tr>
 <tr>
-<td style="text-align:left">arch</td>
-<td style="text-align:left">isize</td>
-<td style="text-align:left">usize</td>
+<td align="left">arch</td>
+<td align="left">isize</td>
+<td align="left">usize</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>最后的 isize 和 usize 会自动基于当前运行平台如果是 64 位系统就是 i64 和 u64，32 位系统则是 i32 和 u32。Rust 默认整型为 i32。</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">x</span> = <span class="hljs-number">2</span>; <span class="hljs-comment">// i32</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>: <span class="hljs-type">i64</span> = <span class="hljs-number">3</span>; <span class="hljs-comment">// i64</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="integer-literal"><a class="markdownIt-Anchor" href="#integer-literal"></a> Integer Literal</h2>
-<table>
+
+<h2 id="Integer-Literal"><a href="#Integer-Literal" class="headerlink" title="Integer Literal"></a>Integer Literal</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">字面值</th>
-<th style="text-align:left">例子</th>
+<th align="left">字面值</th>
+<th align="left">例子</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Decimal</td>
-<td style="text-align:left">100_000</td>
+<tbody><tr>
+<td align="left">Decimal</td>
+<td align="left">100_000</td>
 </tr>
 <tr>
-<td style="text-align:left">Hex</td>
-<td style="text-align:left">0xff</td>
+<td align="left">Hex</td>
+<td align="left">0xff</td>
 </tr>
 <tr>
-<td style="text-align:left">Octal</td>
-<td style="text-align:left">0o77</td>
+<td align="left">Octal</td>
+<td align="left">0o77</td>
 </tr>
 <tr>
-<td style="text-align:left">Binary</td>
-<td style="text-align:left">0b1111_0000</td>
+<td align="left">Binary</td>
+<td align="left">0b1111_0000</td>
 </tr>
 <tr>
-<td style="text-align:left">Byte(u8 only)</td>
-<td style="text-align:left">b’A’</td>
+<td align="left">Byte(u8 only)</td>
+<td align="left">b’A’</td>
 </tr>
-</tbody>
-</table>
-<h2 id="float-point-number"><a class="markdownIt-Anchor" href="#float-point-number"></a> Float Point Number</h2>
-<table>
+</tbody></table>
+<h2 id="Float-Point-Number"><a href="#Float-Point-Number" class="headerlink" title="Float Point Number"></a>Float Point Number</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">长度</th>
-<th style="text-align:left">类型名</th>
+<th align="left">长度</th>
+<th align="left">类型名</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">32-bit</td>
-<td style="text-align:left">f32</td>
+<tbody><tr>
+<td align="left">32-bit</td>
+<td align="left">f32</td>
 </tr>
 <tr>
-<td style="text-align:left">64-bit</td>
-<td style="text-align:left">f64</td>
+<td align="left">64-bit</td>
+<td align="left">f64</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Rust 默认浮点数类型为 f64。</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">x</span> = <span class="hljs-number">2.0</span>; <span class="hljs-comment">// f64</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>: <span class="hljs-type">f32</span> = <span class="hljs-number">3.0</span>; <span class="hljs-comment">// f32</span><br>    <span class="hljs-comment">// 支持的操作</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">sum</span> = <span class="hljs-number">5.3</span> + <span class="hljs-number">10.7</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">difference</span> = <span class="hljs-number">95.5</span> - <span class="hljs-number">5.5</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">product</span> = <span class="hljs-number">5.13</span> * <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">quotient</span> = <span class="hljs-number">152.4</span> / <span class="hljs-number">22.2</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">remainder</span> = <span class="hljs-number">25</span> % <span class="hljs-number">4</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="boolean"><a class="markdownIt-Anchor" href="#boolean"></a> Boolean</h2>
-<p>Rust 的 Boolean 类型大小为 1 byte</p>
+
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>Rust 的 Boolean 类型大小为 1 byte</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">类型名</th>
+<th align="left">名称</th>
+<th align="left">类型名</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">真</td>
-<td style="text-align:left">true</td>
+<tbody><tr>
+<td align="left">真</td>
+<td align="left">true</td>
 </tr>
 <tr>
-<td style="text-align:left">假</td>
-<td style="text-align:left">false</td>
+<td align="left">假</td>
+<td align="left">false</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">t</span> = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">f</span>: <span class="hljs-type">bool</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// 使用类型名显示声明</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="character"><a class="markdownIt-Anchor" href="#character"></a> Character</h2>
-<p>Rust 的字符是一个 4 bytes 的 Unicode Scalar Value</p>
+
+<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><p>Rust 的字符是一个 4 bytes 的 Unicode Scalar Value</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">c</span> = <span class="hljs-string">&#x27;z&#x27;</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">dog</span> = &#x27;🐶&#x27;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="tuple"><a class="markdownIt-Anchor" href="#tuple"></a> Tuple</h2>
-<p>Rust 的元组长度固定，一旦声明后大小不能增长和收缩。</p>
+
+<h2 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h2><p>Rust 的元组长度固定，一旦声明后大小不能增长和收缩。</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">tup</span>: (<span class="hljs-type">i32</span>, <span class="hljs-type">f64</span>, <span class="hljs-type">u8</span>) = (<span class="hljs-number">500</span>, <span class="hljs-number">6.4</span>, <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">let</span> (x, y, z) = tup;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;The value of y is &#123;&#125;&quot;</span>, y);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">five_hundred</span> = tup.<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">six_point_four</span> = tup.<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">one</span> = tup.<span class="hljs-number">2</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="array"><a class="markdownIt-Anchor" href="#array"></a> Array</h2>
-<p>固定长度</p>
+
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>固定长度</p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">b</span>: [<span class="hljs-type">i32</span>; <span class="hljs-number">5</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">array</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">arr</span>: [<span class="hljs-type">i32</span>; <span class="hljs-number">5</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">elememt</span> = array[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">index</span> = <span class="hljs-number">3</span>;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">element2</span> = arr[index];   <span class="hljs-comment">// 访问数组元素 数组索引是0开头</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>Rust 中声明变量的方式是<code>let [mut] variablename : typename = initialvalue;</code></p>
 
                 
