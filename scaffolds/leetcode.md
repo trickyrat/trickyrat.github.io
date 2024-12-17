@@ -1,7 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-categories: [Algorithms, LeetCode]
+categories: 
+  - Algorithms
+  - LeetCode
 tags: Algorithms
 ---
 
